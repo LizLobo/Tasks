@@ -302,7 +302,7 @@
             sidebarTransition.Interval = 10;
             sidebarTransition.Tick += sidebarTransition_Tick;
             // 
-            // Form1
+            // TasksMenu
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -310,7 +310,7 @@
             Controls.Add(sidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "TasksMenu";
             Text = "Form1";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
