@@ -9,14 +9,18 @@ namespace Task2_HierarchicalStructure.Model
     public class Relationships
     {
         public Person Person { get; set; }
+   
         public RelationshipType Type { get; set; }
 
     }
 
     public enum RelationshipType
     {
-        Mother,
         Father,
-        Child
+        Mother,
+        Child,
+        Sibling,
+        Partner,
+        Nephew
     }
 }

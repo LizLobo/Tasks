@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using Task2_HierarchicalStructure.Controller;
 using Task2_HierarchicalStructure.Model;
 using Task2_HierarchicalStructure.View;
@@ -18,6 +20,7 @@ namespace Task2_HierarchicalStructure
             PersonView personView = new PersonView();
             PersonController personController = new PersonController(peopleModel, personView);
 
+            personController.GetFamilyFromFile(@"..\..\..\Data\JSONFamily.json");
             
 
 

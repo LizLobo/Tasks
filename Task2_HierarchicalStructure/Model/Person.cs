@@ -9,14 +9,15 @@ namespace Task2_HierarchicalStructure.Model
 {
     public class Person
     {
-        public string Name { get; set; }
-
         public int Id { get; set; }
+        public string? Name { get; set; }
+        
         public List<Relationships>? Relationships { get; set; }
 
 
 
     }
+
 
    
 

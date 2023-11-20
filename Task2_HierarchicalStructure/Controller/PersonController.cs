@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Task2_HierarchicalStructure.Model;
 using Task2_HierarchicalStructure.View;
+using Newtonsoft.Json;
 
 namespace Task2_HierarchicalStructure.Controller
 {
@@ -29,6 +30,11 @@ namespace Task2_HierarchicalStructure.Controller
            // persons.Remove(person);
         }
 
+        public void GetFamilyFromFile(string filePath)
+        {
+            string jsonData = System.IO.File.ReadAllText(filePath);
 
+            var data = JsonConvert.DeserializeObject<PeopleModel>(jsonData);
+        }
     }
 }

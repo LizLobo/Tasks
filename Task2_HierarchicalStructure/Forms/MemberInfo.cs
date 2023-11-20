@@ -27,8 +27,8 @@ namespace Task2_HierarchicalStructure
 
         private void addMemberSaveButton_Click(object sender, EventArgs e)
         {
-            Person person = new Person(nameTextbox.Text);
-            PersonController.AddPerson(person);
+           // Person person = new Person(nameTextbox.Text);
+            //PersonController.AddPerson(person);
         }
     }
 }
