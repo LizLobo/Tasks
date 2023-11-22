@@ -14,20 +14,32 @@ namespace Task2_HierarchicalStructure
         [STAThread]
         static void Main()
         {
-            //Instantiate the model, controller and the view
-            PeopleModel peopleModel = new PeopleModel();
-            Relationships relationships = new Relationships();
-            PersonView personView = new PersonView();
-            PersonController personController = new PersonController(peopleModel, personView);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            ApplicationConfiguration.Initialize();
 
-            personController.GetFamilyFromFile(@"..\..\..\Data\JSONFamily.json");
-            
+
+
+            //Instantiate the model, controller and the view
+            PersonModel personModel = new PersonModel();
+            PersonView personView = new PersonView(); 
+            PersonController personController = new PersonController(personModel, personView);
+
+
+
+            //Call method that reads a JSON file with person objects
+             personModel.GetFamilyFromFile(@"..\..\..\Data\JSONFamily.json");
+
+
+
+
+
+
 
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Form1(personController));
         }
     }
 }

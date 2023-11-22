@@ -11,6 +11,8 @@
         ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -30,13 +32,14 @@
         {
             addMemberButton = new ReaLTaiizor.Controls.CrownButton();
             crownButton1 = new ReaLTaiizor.Controls.CrownButton();
-            personsListView = new ReaLTaiizor.Controls.CrownListView();
             crownButton2 = new ReaLTaiizor.Controls.CrownButton();
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             label1 = new Label();
+            this.personDataGridView = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)personDataGridView).BeginInit();
             SuspendLayout();
             // 
             // addMemberButton
@@ -57,14 +60,6 @@
             crownButton1.Size = new Size(234, 46);
             crownButton1.TabIndex = 1;
             crownButton1.Text = "Remove Member";
-            // 
-            // personsListView
-            // 
-            personsListView.Location = new Point(100, 227);
-            personsListView.Name = "personsListView";
-            personsListView.Size = new Size(981, 358);
-            personsListView.TabIndex = 2;
-            personsListView.Text = "personsListView";
             // 
             // crownButton2
             // 
@@ -126,9 +121,21 @@
             label1.ForeColor = Color.DimGray;
             label1.Location = new Point(12, 4);
             label1.Name = "label1";
-            label1.Size = new Size(104, 32);
+            label1.Size = new Size(127, 32);
             label1.TabIndex = 2;
-            label1.Text = "A Family";
+            label1.Text = "Person List";
+            // 
+            // personDataGridView
+            // 
+            personDataGridView.BackgroundColor = Color.FromArgb(23, 24, 29);
+            personDataGridView.BorderStyle = BorderStyle.Fixed3D;
+            personDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            personDataGridView.Location = new Point(98, 253);
+            personDataGridView.Name = "personDataGridView";
+            personDataGridView.RowHeadersWidth = 72;
+            personDataGridView.RowTemplate.Height = 37;
+            personDataGridView.Size = new Size(981, 322);
+            personDataGridView.TabIndex = 6;
             // 
             // Form1
             // 
@@ -136,10 +143,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
             ClientSize = new Size(1176, 627);
+            Controls.Add(personDataGridView);
             Controls.Add(panel1);
             Controls.Add(crownLabel1);
             Controls.Add(crownButton2);
-            Controls.Add(personsListView);
             Controls.Add(crownButton1);
             Controls.Add(addMemberButton);
             FormBorderStyle = FormBorderStyle.None;
@@ -148,6 +155,7 @@
             Text = "Task2_HierarchicalStructure";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)personDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -156,11 +164,11 @@
 
         private ReaLTaiizor.Controls.CrownButton addMemberButton;
         private ReaLTaiizor.Controls.CrownButton crownButton1;
-        private ReaLTaiizor.Controls.CrownListView personsListView;
         private ReaLTaiizor.Controls.CrownButton crownButton2;
         private ReaLTaiizor.Controls.CrownLabel crownLabel1;
         private Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Label label1;
+        private DataGridView personDataGridView;
     }
 }

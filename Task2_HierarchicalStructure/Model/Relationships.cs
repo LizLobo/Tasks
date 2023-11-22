@@ -8,19 +8,28 @@ namespace Task2_HierarchicalStructure.Model
 {
     public class Relationships
     {
-        public Person Person { get; set; }
+        public Person RelatedPerson { get; set; }
+        public int RelatedPersonID { get; }
    
-        public RelationshipType Type { get; set; }
+        public RelationshipType Type { get; }
 
+    public Relationships( Person relatedPerson, int relatedPersonID, RelationshipType type)
+    {
+        RelatedPerson = relatedPerson;
+        RelatedPersonID = relatedPersonID;
+        Type = type;
     }
+
+       
+    }
+
 
     public enum RelationshipType
     {
-        Father,
-        Mother,
+        Parent,
         Child,
         Sibling,
-        Partner,
-        Nephew
+        Partner
+        
     }
 }
