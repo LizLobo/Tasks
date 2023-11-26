@@ -66,29 +66,7 @@ namespace Tasks
 
         }
 
-        bool sidebarExpand = true;
-        private void sidebarTransition_Tick(object sender, EventArgs e)
-        {
-            if (sidebarExpand)
-            {
-                sidebar.Width -= 10;
-                if (sidebar.Width <= 109)
-                {
-                    sidebarExpand = false;
-                    sidebarTransition.Stop();
-                }
-            }
-
-            else
-            {
-                sidebar.Width += 10;
-                if (sidebar.Width >= 399)
-                {
-                    sidebarExpand = true;
-                    sidebarTransition.Stop();
-                }
-            }
-        }
+       
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
         {
