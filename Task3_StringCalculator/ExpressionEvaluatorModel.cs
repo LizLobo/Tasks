@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,13 @@ namespace Task3_ExpressionEvaluator
 {
     public class ExpressionEvaluatorModel
     {
-
+        public string Expression { get; set;  }
         public string ExpressionLeft { get; set; }
         public string ExpressionRight { get; set; }
         public string FoundDelimiter { get; set; }
 
         public string MultiValue { get; set; }
+        public float MultiValueAsFloat { get; set; }
 
         public Stack<float> Operands { get; set; }
         public Stack<char> Operators { get; set; }
@@ -87,7 +89,8 @@ namespace Task3_ExpressionEvaluator
                     {
                         if (MultiValue.Length > 0)
                         {
-                            Operands.Push(float.Parse(MultiValue));
+                            MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
+                            Operands.Push(MultiValueAsFloat);
                             MultiValue = "";
                         }
 
@@ -105,7 +108,8 @@ namespace Task3_ExpressionEvaluator
                     {
                         if (MultiValue.Length > 0)
                         {
-                            Operands.Push(float.Parse(MultiValue));
+                            MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
+                            Operands.Push(MultiValueAsFloat);
                             MultiValue = "";
                         }
                         ProcessOperations(Operands, Operators);
@@ -115,13 +119,15 @@ namespace Task3_ExpressionEvaluator
                 }
                 else if (MultiValue.Length > 0)
                 {
-                    Operands.Push(float.Parse(MultiValue));
+                    MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
+                    Operands.Push(MultiValueAsFloat);
                     MultiValue = "";
                 }
             }
             if (MultiValue.Length > 0)
             {
-                Operands.Push(float.Parse(MultiValue));
+                MultiValueAsFloat = float.Parse(MultiValue, CultureInfo.InvariantCulture);
+                Operands.Push(MultiValueAsFloat);
                 MultiValue = "";
             }
             if (Operators.Count > 0)
