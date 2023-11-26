@@ -1,3 +1,5 @@
+using Task3_StringCalculator;
+
 namespace Task3_ExpressionEvaluator
 {
     internal static class Program
@@ -8,10 +10,14 @@ namespace Task3_ExpressionEvaluator
         [STAThread]
         static void Main()
         {
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new ExpressionEvaluatorMain());
+            ExpressionEvaluatorMain view = new ExpressionEvaluatorMain();
+            ExpressionEvaluatorModel model = new ExpressionEvaluatorModel(); // Instantiate the model
+            ExpressionEvaluatorController controller = new ExpressionEvaluatorController(view, model);
+            Application.Run(view);
         }
     }
 }

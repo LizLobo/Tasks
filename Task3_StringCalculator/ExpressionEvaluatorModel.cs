@@ -29,6 +29,7 @@ namespace Task3_ExpressionEvaluator
             Operands = new Stack<float>();
             Operators = new Stack<char>();
             ExpressionResults = new Stack<float>();
+            MultiValue = "";
 
             Precedence = new Dictionary<char, int>
         {
@@ -39,7 +40,7 @@ namespace Task3_ExpressionEvaluator
         };
         }
 
-        void expressionOrganizer(string expression)
+        void ExpressionOrganizer(string expression)
         {
             string[] delimiters = { ">=", "<=", "==", "=", "<", ">" };
             FoundDelimiter = delimiters.FirstOrDefault(d => expression.Contains(d));
@@ -57,7 +58,7 @@ namespace Task3_ExpressionEvaluator
                 }
                 else
                 {
-                    throw new Exception("Invalid input: String does not contain exactly one delimiter");
+                    throw new Exception("Invalid input: String does not contain exactly one delimiter or there is no expression after the delimiter");
                 }
             }
 
@@ -227,6 +228,15 @@ namespace Task3_ExpressionEvaluator
             operands.Push(result);
 
 
+
+        }
+
+      public bool EvaluateExpression()
+        {
+            ExpressionOrganizer(Expression);
+            Evaluator(ExpressionLeft); 
+            Evaluator(ExpressionRight);
+            return ExpressionComparer();
 
         }
 
