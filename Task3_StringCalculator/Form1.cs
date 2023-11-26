@@ -1,8 +1,8 @@
 namespace Task3_ExpressionEvaluator
 {
-    public partial class Form1 : Form
+    public partial class ExpressionEvaluatorMain : Form
     {
-        public Form1()
+        public ExpressionEvaluatorMain()
         {
             InitializeComponent();
         }
