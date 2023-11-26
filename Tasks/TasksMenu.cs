@@ -15,7 +15,7 @@ namespace Tasks
 
         private void btnHam_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace Tasks
 
         }
 
-        
+
         private void taskOne_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
@@ -43,8 +43,8 @@ namespace Tasks
 
         }
 
-       
 
-  
+
+
     }
 }
