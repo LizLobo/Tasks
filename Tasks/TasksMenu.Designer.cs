@@ -44,13 +44,13 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.Gainsboro;
             panel1.Controls.Add(nightControlBox1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(731, 56);
+            panel1.Size = new Size(731, 41);
             panel1.TabIndex = 0;
             // 
             // nightControlBox1
@@ -80,7 +80,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(12, 5);
             label1.Name = "label1";
             label1.Size = new Size(80, 32);
             label1.TabIndex = 2;
