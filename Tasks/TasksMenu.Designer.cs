@@ -87,15 +87,8 @@
             label1.Text = "TASKS";
             label1.Click += label1_Click;
             // 
-            // menuTransition
-            // 
-            menuTransition.Interval = 10;
-            menuTransition.Tick += menuTransition_Tick;
-            // 
-            // sidebarTransition
-            // 
-            sidebarTransition.Interval = 10;
-            sidebarTransition.Tick += sidebarTransition_Tick;
+            
+            
             // 
             // crownButton1
             // 
@@ -132,14 +125,12 @@
             // 
             // crownButton4
             // 
-            crownButton4.Image = (Image)resources.GetObject("crownButton4.Image");
             crownButton4.Location = new Point(353, 360);
             crownButton4.Name = "crownButton4";
             crownButton4.Padding = new Padding(5);
             crownButton4.Size = new Size(194, 164);
             crownButton4.TabIndex = 4;
-            crownButton4.Text = "Orderbook";
-            crownButton4.TextImageRelation = TextImageRelation.ImageAboveText;
+            crownButton4.Text = "crownButton4";
             // 
             // TasksMenu
             // 
