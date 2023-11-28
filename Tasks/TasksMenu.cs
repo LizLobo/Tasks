@@ -1,3 +1,5 @@
+using Task1_CountdownTimer;
+
 namespace Tasks
 {
     public partial class TasksMenu : Form
@@ -40,11 +42,14 @@ namespace Tasks
         }
         private void asyncMethod_Click(object sender, EventArgs e)
         {
-
+            
         }
 
+        private void Task1Button_Click(object sender, EventArgs e)
+        {
+            Task1_CountdownTimer.Task1_CountdownTimer countdownTimerForm = new Task1_CountdownTimer.Task1_CountdownTimer();
+            countdownTimerForm.Show(); // Show the countdown timer form
 
-
-
+        }
     }
 }

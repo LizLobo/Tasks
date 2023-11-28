@@ -35,7 +35,7 @@
             label1 = new Label();
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
-            crownButton1 = new ReaLTaiizor.Controls.CrownButton();
+            Task1Button = new ReaLTaiizor.Controls.CrownButton();
             crownButton2 = new ReaLTaiizor.Controls.CrownButton();
             crownButton3 = new ReaLTaiizor.Controls.CrownButton();
             crownButton4 = new ReaLTaiizor.Controls.CrownButton();
@@ -57,7 +57,7 @@
             // 
             nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             nightControlBox1.BackColor = Color.Transparent;
-            nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.CloseHoverForeColor = Color.White;
             nightControlBox1.DefaultLocation = true;
             nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
@@ -88,16 +88,17 @@
             label1.Text = "TASKS";
             label1.Click += label1_Click;
             // 
-            // crownButton1
+            // Task1Button
             // 
-            crownButton1.Image = (Image)resources.GetObject("crownButton1.Image");
-            crownButton1.Location = new Point(143, 177);
-            crownButton1.Name = "crownButton1";
-            crownButton1.Padding = new Padding(5);
-            crownButton1.Size = new Size(194, 164);
-            crownButton1.TabIndex = 1;
-            crownButton1.Text = "Timer with Two Methods";
-            crownButton1.TextImageRelation = TextImageRelation.ImageAboveText;
+            Task1Button.Image = (Image)resources.GetObject("Task1Button.Image");
+            Task1Button.Location = new Point(143, 177);
+            Task1Button.Name = "Task1Button";
+            Task1Button.Padding = new Padding(5);
+            Task1Button.Size = new Size(194, 164);
+            Task1Button.TabIndex = 1;
+            Task1Button.Text = "Timer with Two Methods";
+            Task1Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            Task1Button.Click += Task1Button_Click;
             // 
             // crownButton2
             // 
@@ -141,7 +142,7 @@
             Controls.Add(crownButton4);
             Controls.Add(crownButton3);
             Controls.Add(crownButton2);
-            Controls.Add(crownButton1);
+            Controls.Add(Task1Button);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "TasksMenu";
@@ -161,7 +162,7 @@
         private ReaLTaiizor.Controls.CrownContextMenuStrip crownContextMenuStrip1;
         private System.Windows.Forms.Timer menuTransition;
         private System.Windows.Forms.Timer sidebarTransition;
-        private ReaLTaiizor.Controls.CrownButton crownButton1;
+        private ReaLTaiizor.Controls.CrownButton Task1Button;
         private ReaLTaiizor.Controls.CrownButton crownButton2;
         private ReaLTaiizor.Controls.CrownButton crownButton3;
         private ReaLTaiizor.Controls.CrownButton crownButton4;
