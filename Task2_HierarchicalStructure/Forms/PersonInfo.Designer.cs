@@ -1,6 +1,6 @@
 ﻿namespace Task2_HierarchicalStructure
 {
-    partial class MemberInfo
+    partial class PersonInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -40,14 +40,10 @@
             idNumberLabel = new ReaLTaiizor.Controls.CrownLabel();
             sexComboBox = new ReaLTaiizor.Controls.CrownComboBox();
             genderComboBox = new ReaLTaiizor.Controls.CrownComboBox();
-            addMemberSaveButton = new ReaLTaiizor.Controls.CrownButton();
+            addPersonSaveButton = new ReaLTaiizor.Controls.CrownButton();
             addMemberCancelButton = new ReaLTaiizor.Controls.CrownButton();
-            relationshipLabel = new ReaLTaiizor.Controls.CrownLabel();
+            deceasedLabel = new ReaLTaiizor.Controls.CrownLabel();
             relationshipCheckBox = new ReaLTaiizor.Controls.CrownCheckBox();
-            crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
-            crownComboBox1 = new ReaLTaiizor.Controls.CrownComboBox();
-            crownComboBox2 = new ReaLTaiizor.Controls.CrownComboBox();
-            crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
             ((System.ComponentModel.ISupportInitialize)ageNumeric).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +51,7 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            nameLabel.Location = new Point(248, 227);
+            nameLabel.Location = new Point(229, 189);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(74, 30);
             nameLabel.TabIndex = 0;
@@ -65,7 +61,7 @@
             // 
             surnameLabel.AutoSize = true;
             surnameLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            surnameLabel.Location = new Point(248, 293);
+            surnameLabel.Location = new Point(229, 256);
             surnameLabel.Name = "surnameLabel";
             surnameLabel.Size = new Size(100, 30);
             surnameLabel.TabIndex = 1;
@@ -75,7 +71,7 @@
             // 
             ageLabel.AutoSize = true;
             ageLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            ageLabel.Location = new Point(248, 433);
+            ageLabel.Location = new Point(229, 323);
             ageLabel.Name = "ageLabel";
             ageLabel.Size = new Size(55, 30);
             ageLabel.TabIndex = 2;
@@ -83,7 +79,7 @@
             // 
             // ageNumeric
             // 
-            ageNumeric.Location = new Point(386, 431);
+            ageNumeric.Location = new Point(367, 320);
             ageNumeric.Name = "ageNumeric";
             ageNumeric.Size = new Size(162, 35);
             ageNumeric.TabIndex = 3;
@@ -94,7 +90,7 @@
             surnameTextbox.BackColor = Color.FromArgb(69, 73, 74);
             surnameTextbox.BorderStyle = BorderStyle.FixedSingle;
             surnameTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            surnameTextbox.Location = new Point(386, 288);
+            surnameTextbox.Location = new Point(367, 254);
             surnameTextbox.Name = "surnameTextbox";
             surnameTextbox.Size = new Size(310, 35);
             surnameTextbox.TabIndex = 4;
@@ -104,7 +100,7 @@
             nameTextbox.BackColor = Color.FromArgb(69, 73, 74);
             nameTextbox.BorderStyle = BorderStyle.FixedSingle;
             nameTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            nameTextbox.Location = new Point(388, 226);
+            nameTextbox.Location = new Point(369, 188);
             nameTextbox.Name = "nameTextbox";
             nameTextbox.Size = new Size(308, 35);
             nameTextbox.TabIndex = 5;
@@ -113,7 +109,7 @@
             // 
             sexLabel.AutoSize = true;
             sexLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            sexLabel.Location = new Point(248, 504);
+            sexLabel.Location = new Point(229, 390);
             sexLabel.Name = "sexLabel";
             sexLabel.Size = new Size(50, 30);
             sexLabel.TabIndex = 6;
@@ -123,7 +119,7 @@
             // 
             genderLabel.AutoSize = true;
             genderLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            genderLabel.Location = new Point(248, 576);
+            genderLabel.Location = new Point(229, 457);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(85, 30);
             genderLabel.TabIndex = 7;
@@ -134,7 +130,7 @@
             idNumberTextbox.BackColor = Color.FromArgb(69, 73, 74);
             idNumberTextbox.BorderStyle = BorderStyle.FixedSingle;
             idNumberTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            idNumberTextbox.Location = new Point(386, 353);
+            idNumberTextbox.Location = new Point(367, 122);
             idNumberTextbox.Name = "idNumberTextbox";
             idNumberTextbox.Size = new Size(310, 35);
             idNumberTextbox.TabIndex = 13;
@@ -143,7 +139,7 @@
             // 
             idNumberLabel.AutoSize = true;
             idNumberLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            idNumberLabel.Location = new Point(246, 353);
+            idNumberLabel.Location = new Point(227, 122);
             idNumberLabel.Name = "idNumberLabel";
             idNumberLabel.Size = new Size(117, 30);
             idNumberLabel.TabIndex = 14;
@@ -154,7 +150,7 @@
             sexComboBox.DrawMode = DrawMode.OwnerDrawVariable;
             sexComboBox.FormattingEnabled = true;
             sexComboBox.Items.AddRange(new object[] { "Female", "Male" });
-            sexComboBox.Location = new Point(386, 504);
+            sexComboBox.Location = new Point(367, 386);
             sexComboBox.Name = "sexComboBox";
             sexComboBox.Size = new Size(162, 36);
             sexComboBox.TabIndex = 15;
@@ -164,20 +160,20 @@
             genderComboBox.DrawMode = DrawMode.OwnerDrawVariable;
             genderComboBox.FormattingEnabled = true;
             genderComboBox.Items.AddRange(new object[] { "Female", "Male", "Other" });
-            genderComboBox.Location = new Point(386, 573);
+            genderComboBox.Location = new Point(367, 453);
             genderComboBox.Name = "genderComboBox";
             genderComboBox.Size = new Size(162, 36);
             genderComboBox.TabIndex = 16;
             // 
-            // addMemberSaveButton
+            // addPersonSaveButton
             // 
-            addMemberSaveButton.Location = new Point(165, 770);
-            addMemberSaveButton.Name = "addMemberSaveButton";
-            addMemberSaveButton.Padding = new Padding(5);
-            addMemberSaveButton.Size = new Size(232, 63);
-            addMemberSaveButton.TabIndex = 17;
-            addMemberSaveButton.Text = "Save Member";
-            addMemberSaveButton.Click += addMemberSaveButton_Click;
+            addPersonSaveButton.Location = new Point(165, 770);
+            addPersonSaveButton.Name = "addPersonSaveButton";
+            addPersonSaveButton.Padding = new Padding(5);
+            addPersonSaveButton.Size = new Size(232, 63);
+            addPersonSaveButton.TabIndex = 17;
+            addPersonSaveButton.Text = "Save Person";
+            addPersonSaveButton.Click += addPersonSaveButton_Click;
             // 
             // addMemberCancelButton
             // 
@@ -187,81 +183,37 @@
             addMemberCancelButton.Size = new Size(229, 63);
             addMemberCancelButton.TabIndex = 18;
             addMemberCancelButton.Text = "Cancel";
-            addMemberCancelButton.Click += addMemberCancelButton_Click;
+            addMemberCancelButton.Click += addPersonCancelButton_Click;
             // 
-            // relationshipLabel
+            // deceasedLabel
             // 
-            relationshipLabel.AutoSize = true;
-            relationshipLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            relationshipLabel.Location = new Point(246, 644);
-            relationshipLabel.Name = "relationshipLabel";
-            relationshipLabel.Size = new Size(131, 30);
-            relationshipLabel.TabIndex = 19;
-            relationshipLabel.Text = "Relationship:";
+            deceasedLabel.AutoSize = true;
+            deceasedLabel.ForeColor = Color.FromArgb(220, 220, 220);
+            deceasedLabel.Location = new Point(227, 524);
+            deceasedLabel.Name = "deceasedLabel";
+            deceasedLabel.Size = new Size(108, 30);
+            deceasedLabel.TabIndex = 19;
+            deceasedLabel.Text = "Deceased:";
             // 
             // relationshipCheckBox
             // 
             relationshipCheckBox.AutoSize = true;
-            relationshipCheckBox.Location = new Point(419, 644);
+            relationshipCheckBox.Location = new Point(400, 520);
             relationshipCheckBox.Name = "relationshipCheckBox";
-            relationshipCheckBox.Size = new Size(129, 34);
+            relationshipCheckBox.Size = new Size(81, 34);
             relationshipCheckBox.TabIndex = 20;
-            relationshipCheckBox.Text = "   Married";
+            relationshipCheckBox.Text = "  Yes";
             // 
-            // crownLabel1
-            // 
-            crownLabel1.AutoSize = true;
-            crownLabel1.ForeColor = Color.FromArgb(220, 220, 220);
-            crownLabel1.Location = new Point(246, 101);
-            crownLabel1.Name = "crownLabel1";
-            crownLabel1.Size = new Size(129, 30);
-            crownLabel1.TabIndex = 21;
-            crownLabel1.Text = "Person Type:";
-            // 
-            // crownComboBox1
-            // 
-            crownComboBox1.DrawMode = DrawMode.OwnerDrawVariable;
-            crownComboBox1.FormattingEnabled = true;
-            crownComboBox1.Items.AddRange(new object[] { "Parent", "Child" });
-            crownComboBox1.Location = new Point(386, 101);
-            crownComboBox1.Name = "crownComboBox1";
-            crownComboBox1.Size = new Size(162, 36);
-            crownComboBox1.TabIndex = 22;
-            // 
-            // crownComboBox2
-            // 
-            crownComboBox2.DrawMode = DrawMode.OwnerDrawVariable;
-            crownComboBox2.FormattingEnabled = true;
-            crownComboBox2.Items.AddRange(new object[] { "Father", "Mother", "Guardian", "Partner" });
-            crownComboBox2.Location = new Point(388, 159);
-            crownComboBox2.Name = "crownComboBox2";
-            crownComboBox2.Size = new Size(162, 36);
-            crownComboBox2.TabIndex = 24;
-            // 
-            // crownLabel2
-            // 
-            crownLabel2.AutoSize = true;
-            crownLabel2.ForeColor = Color.FromArgb(220, 220, 220);
-            crownLabel2.Location = new Point(248, 159);
-            crownLabel2.Name = "crownLabel2";
-            crownLabel2.Size = new Size(139, 30);
-            crownLabel2.TabIndex = 23;
-            crownLabel2.Text = "Parental Role:";
-            // 
-            // MemberInfo
+            // PersonInfo
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
             ClientSize = new Size(894, 895);
-            Controls.Add(crownComboBox2);
-            Controls.Add(crownLabel2);
-            Controls.Add(crownComboBox1);
-            Controls.Add(crownLabel1);
             Controls.Add(relationshipCheckBox);
-            Controls.Add(relationshipLabel);
+            Controls.Add(deceasedLabel);
             Controls.Add(addMemberCancelButton);
-            Controls.Add(addMemberSaveButton);
+            Controls.Add(addPersonSaveButton);
             Controls.Add(genderComboBox);
             Controls.Add(sexComboBox);
             Controls.Add(idNumberLabel);
@@ -275,7 +227,7 @@
             Controls.Add(surnameLabel);
             Controls.Add(nameLabel);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "MemberInfo";
+            Name = "PersonInfo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add New Member";
             ((System.ComponentModel.ISupportInitialize)ageNumeric).EndInit();
@@ -297,13 +249,9 @@
         private ReaLTaiizor.Controls.CrownLabel idNumberLabel;
         private ReaLTaiizor.Controls.CrownComboBox sexComboBox;
         private ReaLTaiizor.Controls.CrownComboBox genderComboBox;
-        private ReaLTaiizor.Controls.CrownButton addMemberSaveButton;
+        private ReaLTaiizor.Controls.CrownButton addPersonSaveButton;
         private ReaLTaiizor.Controls.CrownButton addMemberCancelButton;
-        private ReaLTaiizor.Controls.CrownLabel relationshipLabel;
+        private ReaLTaiizor.Controls.CrownLabel deceasedLabel;
         private ReaLTaiizor.Controls.CrownCheckBox relationshipCheckBox;
-        private ReaLTaiizor.Controls.CrownLabel crownLabel1;
-        private ReaLTaiizor.Controls.CrownComboBox crownComboBox1;
-        private ReaLTaiizor.Controls.CrownComboBox crownComboBox2;
-        private ReaLTaiizor.Controls.CrownLabel crownLabel2;
     }
 }

@@ -21,14 +21,13 @@ namespace Task2_HierarchicalStructure
 
 
             //Instantiate the model, controller and the view
-            PersonModel personModel = new PersonModel();
-            PersonView personView = new PersonView(); 
-            PersonController personController = new PersonController(personModel, personView);
+            PersonModel personModel = new PersonModel(); 
+            PersonController personController = new PersonController(personModel);
 
 
 
             //Call method that reads a JSON file with person objects
-             personModel.GetFamilyFromFile(@"..\..\..\Data\JSONFamily.json");
+             personModel.GetPersonsFromFile(@"..\..\..\Data\JSONFamily.json");
 
 
 
@@ -39,7 +38,7 @@ namespace Task2_HierarchicalStructure
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            Application.Run(new Form1(personController));
+            Application.Run(new PersonList(personController));
         }
     }
 }

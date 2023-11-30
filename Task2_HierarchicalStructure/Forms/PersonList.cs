@@ -1,13 +1,14 @@
 using System.Text;
+using System.Windows.Forms;
 using Task2_HierarchicalStructure.Controller;
 using Task2_HierarchicalStructure.Model;
 
 namespace Task2_HierarchicalStructure
 {
-    public partial class Form1 : Form
+    public partial class PersonList : Form
     {
         private PersonController _personController;
-        public Form1(PersonController personController)
+        public PersonList(PersonController personController)
         {
             InitializeComponent();
             _personController = personController;
@@ -43,7 +44,7 @@ namespace Task2_HierarchicalStructure
                 string relationshipsInfo = GetRelationshipsInfo(person);
 
                 // Add a new row to the DataGridView
-                personDataGridView.Rows.Add(person.Id, person.Name, relationshipsInfo);
+                personDataGridView.Rows.Add(person.Id, person.Name + " " + person.Surname, relationshipsInfo);
             }
         }
 
@@ -71,11 +72,22 @@ namespace Task2_HierarchicalStructure
 
             return relationships.ToString();
         }
-        private void addMemberButton_Click(object sender, EventArgs e)
+        private void addPersonButton_Click(object sender, EventArgs e)
         {
-            MemberInfo addMemberInfo = new MemberInfo();
+            ShowFormPersonInfo();
 
-            addMemberInfo.ShowDialog();
+        }
+
+        private void ShowFormPersonInfo()
+        {
+            PersonInfo personInfoForm = new PersonInfo(this);
+            personInfoForm.FormClosed += (s, ev) => RefreshDataGridView(); // Attach an event handler to FormClosed
+            personInfoForm.ShowDialog();
+        }
+
+        public void RefreshDataGridView()
+        {
+            DisplayPeopleInDataGridView(); // Update the DataGridView's DataSource
         }
     }
 }

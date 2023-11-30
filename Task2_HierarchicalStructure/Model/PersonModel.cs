@@ -23,9 +23,38 @@ namespace Task2_HierarchicalStructure.Model
             public void AddPerson(Person person)
             {
                 PersonList.Add(person);
+                SavePersonsToJsonFile();
             }
 
-        public void GetFamilyFromFile(string filePath)
+        public bool RemovePerson(Person person)
+        {
+            try
+            {
+                return PersonList.Remove(person);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions here
+                Console.WriteLine($"Error removing person: {ex.Message}");
+                return false;
+            }
+
+        }
+
+        public void SavePersonsToJsonFile()
+        {
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(PersonList, Formatting.Indented);
+                File.WriteAllText(jsonFilePath, jsonData);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions here
+                Console.WriteLine($"Error saving to JSON file: {ex.Message}");
+            }
+        }
+        public void GetPersonsFromFile(string filePath)
         {
 
             try

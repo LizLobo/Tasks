@@ -19,11 +19,11 @@ namespace Task2_HierarchicalStructure.Controller
             List<Person> childrenObjects = new List<Person>();
 
         private PersonModel _personModel;
-        private PersonView _personView;
-        public PersonController(PersonModel personModel, PersonView personView) 
+        
+        public PersonController(PersonModel personModel) 
         {
             _personModel = personModel;
-            _personView = personView;
+           
         }
         public void AddPerson(Person person)
         {
@@ -36,9 +36,9 @@ namespace Task2_HierarchicalStructure.Controller
         }
 
 
-        public static void RemovePerson(Person person)
+        public bool RemovePerson(Person person)
         {
-           // persons.Remove(person);
+            return _personModel.RemovePerson(person);
         }
 
 

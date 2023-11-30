@@ -1,52 +1,12 @@
 [
   {
-    "id": 1,
-    "name": "John",
-    "relationships": [
-      {
-        "type": "Parent",
-        "relatedPersonId": 2
-      },
-      {
-        "type": "Sibling",
-        "relatedPersonId": 3
-      },
-      {
-        "type": "Partner",
-        "relatedPersonId": 4
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Anne",
-    "relationships": [
-      {
-        "type": "Child",
-        "relatedPersonId": 1
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Mark",
-    "relationships": [
-      {
-        "type": "Sibling",
-        "relatedPersonId": 1
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Jane",
-    "relationships": [
-      {
-        "type": "Partner",
-        "relatedPersonId": 1
-      }
-    ]
+    "Id": "85dc6b6b-5a7e-4eef-827d-a767cc957e81",
+    "Name": "Liz",
+    "Surname": "Lobo",
+    "Age": 31,
+    "Sex": "Female",
+    "Gender": null,
+    "IsDeceased": false,
+    "Relationships": []
   }
 ]
-
-
