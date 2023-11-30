@@ -14,7 +14,7 @@ namespace Task2_HierarchicalStructure
 {
     public partial class PersonInfo : Form
     {
-        private readonly PersonController controller;
+        private readonly PersonController _personController;
         private PersonModel personModel;
         private PersonList personListForm;
 
@@ -22,7 +22,7 @@ namespace Task2_HierarchicalStructure
         {
             InitializeComponent();
             personModel = new PersonModel();
-            controller = new PersonController(personModel);
+            _personController = new PersonController(personModel);
             this.personListForm = personListForm;
 
             string uniqueId = GenerateUniqueId(); // Generate a unique ID (you might have your own way to generate IDs)
@@ -49,15 +49,13 @@ namespace Task2_HierarchicalStructure
             bool isDeceased = relationshipCheckBox.Checked;
 
             Person person = new Person(id, name, surname, age, sex, gender, isDeceased);
-            controller.AddPerson(person);
-
+            _personController.AddPerson(person);
 
             string newUniqueId = GenerateUniqueId();
             idNumberTextbox.Text = newUniqueId;
 
-
             // Call RefreshDataGridView() on the PersonList instance to update the DataGridView
-            personListForm.RefreshDataGridView();
+            personListForm.DisplayPeopleInDataGridView();
 
             // Close the current PersonInfo form
             this.Close();

@@ -16,8 +16,8 @@ namespace Task2_HierarchicalStructure.Model
 
             public PersonModel()
             {
-                PersonList = new List<Person>();
-            }
+            GetPersonsFromJSONFile(jsonFilePath);
+        }
 
            
             public void AddPerson(Person person)
@@ -54,24 +54,26 @@ namespace Task2_HierarchicalStructure.Model
                 Console.WriteLine($"Error saving to JSON file: {ex.Message}");
             }
         }
-        public void GetPersonsFromFile(string filePath)
+        public void GetPersonsFromJSONFile(string filePath)
         {
-
             try
             {
-
-                string jsonData = System.IO.File.ReadAllText(filePath);
-
+                string jsonData = File.ReadAllText(jsonFilePath);
                 PersonList = JsonConvert.DeserializeObject<List<Person>>(jsonData);
-            }
-            catch
-            {
 
+                if (PersonList == null)
+                {
+                    PersonList = new List<Person>();
+                }
             }
-            
+            catch (Exception ex)
+            {
+               
+                PersonList = new List<Person>();
+            }
         }
 
-        
+
 
     }
     

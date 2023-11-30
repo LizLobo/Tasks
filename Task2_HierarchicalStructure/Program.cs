@@ -26,9 +26,7 @@ namespace Task2_HierarchicalStructure
 
 
 
-            //Call method that reads a JSON file with person objects
-             personModel.GetPersonsFromFile(@"..\..\..\Data\JSONFamily.json");
-
+            
 
 
 

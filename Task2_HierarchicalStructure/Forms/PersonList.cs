@@ -31,14 +31,14 @@ namespace Task2_HierarchicalStructure
             // Add more rows as needed
         }
 
-        private void DisplayPeopleInDataGridView()
+        public void DisplayPeopleInDataGridView()
         {
-            List<Person> peopleList = _personController.GetPeopleList();
+         
 
             // Clear existing rows
             personDataGridView.Rows.Clear();
 
-            foreach (Person person in peopleList)
+            foreach (Person person in _personController.GetPeopleList())
             {
                 // Extract relationships information for display
                 string relationshipsInfo = GetRelationshipsInfo(person);
@@ -81,13 +81,10 @@ namespace Task2_HierarchicalStructure
         private void ShowFormPersonInfo()
         {
             PersonInfo personInfoForm = new PersonInfo(this);
-            personInfoForm.FormClosed += (s, ev) => RefreshDataGridView(); // Attach an event handler to FormClosed
+            personInfoForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); // Attach an event handler to FormClosed
             personInfoForm.ShowDialog();
         }
 
-        public void RefreshDataGridView()
-        {
-            DisplayPeopleInDataGridView(); // Update the DataGridView's DataSource
-        }
+        
     }
 }
