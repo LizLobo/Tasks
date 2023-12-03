@@ -31,7 +31,6 @@
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             label1 = new Label();
-            sexComboBox = new ReaLTaiizor.Controls.CrownComboBox();
             mainPersonLabel = new ReaLTaiizor.Controls.CrownLabel();
             crownComboBox1 = new ReaLTaiizor.Controls.CrownComboBox();
             relationshipTypeLabel = new ReaLTaiizor.Controls.CrownLabel();
@@ -41,6 +40,7 @@
             cancelRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
             removeRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
             addRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
+            nameTextbox = new ReaLTaiizor.Controls.CrownTextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1017, 0);
+            nightControlBox1.Location = new Point(1029, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -88,16 +88,6 @@
             label1.Size = new Size(180, 38);
             label1.TabIndex = 2;
             label1.Text = "Relationships";
-            // 
-            // sexComboBox
-            // 
-            sexComboBox.DrawMode = DrawMode.OwnerDrawVariable;
-            sexComboBox.FormattingEnabled = true;
-            sexComboBox.Items.AddRange(new object[] { "Female", "Male" });
-            sexComboBox.Location = new Point(187, 326);
-            sexComboBox.Name = "sexComboBox";
-            sexComboBox.Size = new Size(175, 40);
-            sexComboBox.TabIndex = 17;
             // 
             // mainPersonLabel
             // 
@@ -186,12 +176,23 @@
             addRelationshipButton.TabIndex = 23;
             addRelationshipButton.Text = "Add Relationship";
             // 
+            // nameTextbox
+            // 
+            nameTextbox.BackColor = Color.FromArgb(69, 73, 74);
+            nameTextbox.BorderStyle = BorderStyle.FixedSingle;
+            nameTextbox.ForeColor = Color.FromArgb(220, 220, 220);
+            nameTextbox.Location = new Point(188, 326);
+            nameTextbox.Name = "nameTextbox";
+            nameTextbox.Size = new Size(189, 39);
+            nameTextbox.TabIndex = 26;
+            // 
             // ManageRelationships
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
             ClientSize = new Size(1168, 480);
+            Controls.Add(nameTextbox);
             Controls.Add(cancelRelationshipButton);
             Controls.Add(removeRelationshipButton);
             Controls.Add(addRelationshipButton);
@@ -200,13 +201,12 @@
             Controls.Add(relatedPersonLabel);
             Controls.Add(crownComboBox1);
             Controls.Add(relationshipTypeLabel);
-            Controls.Add(sexComboBox);
             Controls.Add(mainPersonLabel);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ManageRelationships";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Relationships";
+            Text = "Manage Relationships";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -218,7 +218,6 @@
         private Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Label label1;
-        private ReaLTaiizor.Controls.CrownComboBox sexComboBox;
         private ReaLTaiizor.Controls.CrownLabel mainPersonLabel;
         private ReaLTaiizor.Controls.CrownComboBox crownComboBox1;
         private ReaLTaiizor.Controls.CrownLabel relationshipTypeLabel;
@@ -228,5 +227,6 @@
         private ReaLTaiizor.Controls.CrownButton cancelRelationshipButton;
         private ReaLTaiizor.Controls.CrownButton removeRelationshipButton;
         private ReaLTaiizor.Controls.CrownButton addRelationshipButton;
+        private ReaLTaiizor.Controls.CrownTextBox nameTextbox;
     }
 }

@@ -28,16 +28,10 @@ namespace Task2_HierarchicalStructure.Model
 
         public bool RemovePerson(Person person)
         {
-            try
-            {
+            
                 return PersonList.Remove(person);
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions here
-                Console.WriteLine($"Error removing person: {ex.Message}");
-                return false;
-            }
+            
+            
 
         }
 
@@ -73,8 +67,21 @@ namespace Task2_HierarchicalStructure.Model
             }
         }
 
+        public void RemovePersonFromJsonFile(Person person)
+        {
+            // Load existing data from the JSON file
+            List<Person> existingData = JsonConvert.DeserializeObject<List<Person>>(File.ReadAllText(jsonFilePath));
+
+            // Remove the specified person
+            existingData.RemoveAll(p => p.Id == person.Id); // Modify this based on your comparison logic
+
+            // Serialize and save the updated data back to the JSON file
+            File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(existingData, Formatting.Indented));
+        }
+
+
 
 
     }
-    
+
 }

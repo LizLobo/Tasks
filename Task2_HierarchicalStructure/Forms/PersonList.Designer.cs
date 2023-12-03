@@ -49,29 +49,30 @@
             // 
             // addPersonButton
             // 
-            addPersonButton.Location = new Point(98, 97);
+            addPersonButton.Location = new Point(106, 103);
             addPersonButton.Name = "addPersonButton";
             addPersonButton.Padding = new Padding(5);
-            addPersonButton.Size = new Size(234, 46);
+            addPersonButton.Size = new Size(254, 49);
             addPersonButton.TabIndex = 0;
             addPersonButton.Text = "Add Person";
             addPersonButton.Click += addPersonButton_Click;
             // 
             // removePersonButton
             // 
-            removePersonButton.Location = new Point(362, 97);
+            removePersonButton.Location = new Point(392, 103);
             removePersonButton.Name = "removePersonButton";
             removePersonButton.Padding = new Padding(5);
-            removePersonButton.Size = new Size(234, 46);
+            removePersonButton.Size = new Size(254, 49);
             removePersonButton.TabIndex = 1;
             removePersonButton.Text = "Remove Person";
+            removePersonButton.Click += removePersonButton_Click;
             // 
             // editPersonButton
             // 
-            editPersonButton.Location = new Point(628, 97);
+            editPersonButton.Location = new Point(680, 103);
             editPersonButton.Name = "editPersonButton";
             editPersonButton.Padding = new Padding(5);
-            editPersonButton.Size = new Size(234, 46);
+            editPersonButton.Size = new Size(254, 49);
             editPersonButton.TabIndex = 3;
             editPersonButton.Text = "Edit Person";
             // 
@@ -79,9 +80,9 @@
             // 
             crownLabel1.AutoSize = true;
             crownLabel1.ForeColor = Color.FromArgb(220, 220, 220);
-            crownLabel1.Location = new Point(100, 179);
+            crownLabel1.Location = new Point(108, 191);
             crownLabel1.Name = "crownLabel1";
-            crownLabel1.Size = new Size(117, 30);
+            crownLabel1.Size = new Size(132, 32);
             crownLabel1.TabIndex = 4;
             crownLabel1.Text = "Person List:";
             // 
@@ -93,7 +94,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1247, 41);
+            panel1.Size = new Size(1351, 44);
             panel1.TabIndex = 5;
             // 
             // nightControlBox1
@@ -110,7 +111,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1108, 0);
+            nightControlBox1.Location = new Point(1212, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -124,9 +125,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(12, 4);
+            label1.Location = new Point(13, 4);
             label1.Name = "label1";
-            label1.Size = new Size(127, 32);
+            label1.Size = new Size(150, 38);
             label1.TabIndex = 2;
             label1.Text = "Person List";
             // 
@@ -152,7 +153,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             personDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             personDataGridView.GridColor = SystemColors.ControlDarkDark;
-            personDataGridView.Location = new Point(98, 253);
+            personDataGridView.Location = new Point(106, 270);
             personDataGridView.Name = "personDataGridView";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(23, 24, 29);
@@ -170,24 +171,26 @@
             personDataGridView.RowTemplate.DefaultCellStyle.SelectionBackColor = SystemColors.MenuHighlight;
             personDataGridView.RowTemplate.DefaultCellStyle.SelectionForeColor = SystemColors.Control;
             personDataGridView.RowTemplate.Height = 37;
-            personDataGridView.Size = new Size(1030, 322);
+            personDataGridView.Size = new Size(1151, 343);
             personDataGridView.TabIndex = 6;
+            personDataGridView.SelectionChanged += personDataGridView_SelectionChanged;
             // 
             // manageRelationshipsButton
             // 
-            manageRelationshipsButton.Location = new Point(894, 97);
+            manageRelationshipsButton.Location = new Point(969, 103);
             manageRelationshipsButton.Name = "manageRelationshipsButton";
             manageRelationshipsButton.Padding = new Padding(5);
-            manageRelationshipsButton.Size = new Size(234, 46);
+            manageRelationshipsButton.Size = new Size(288, 49);
             manageRelationshipsButton.TabIndex = 7;
             manageRelationshipsButton.Text = "Manage Relationships";
+            manageRelationshipsButton.Click += manageRelationshipsButton_Click;
             // 
             // PersonList
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
-            ClientSize = new Size(1247, 627);
+            ClientSize = new Size(1351, 669);
             Controls.Add(manageRelationshipsButton);
             Controls.Add(personDataGridView);
             Controls.Add(panel1);

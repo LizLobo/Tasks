@@ -27,12 +27,12 @@ namespace Task2_HierarchicalStructure
             personDataGridView.Columns[1].Name = "Person";
             personDataGridView.Columns[2].Name = "Relations";
 
-            
+
         }
 
         public void DisplayPeopleInDataGridView()
         {
-         
+
 
             // Clear existing rows
             personDataGridView.Rows.Clear();
@@ -84,10 +84,64 @@ namespace Task2_HierarchicalStructure
             personInfoForm.ShowDialog();
         }
 
+        private void personDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (personDataGridView.SelectedRows.Count > 0)
+            {
+                removePersonButton.Enabled = true;
+            }
+            else
+            {
+                removePersonButton.Enabled = false;
+            }
+        }
+
+        private void removePersonButton_Click(object sender, EventArgs e)
+        {
+            if (personDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = personDataGridView.SelectedRows[0];
+
+                Person personToRemove = GetPersonFromSelectedRow(selectedRow);
+
+                RemovePerson(personToRemove);
+
+                DisplayPeopleInDataGridView();
+            }
+        }
+
+        private Person GetPersonFromSelectedRow(DataGridViewRow selectedRow)
+        {
+            string personId = selectedRow.Cells["ID"].Value.ToString(); ;
+
+            return _personController.GetPeopleList().FirstOrDefault(p => p.Id == personId);
+        }
+
+        private void RemovePerson(Person person)
+        {
+            bool removed = _personController.RemovePerson(person);
+
+            if (removed)
+            {
+                _personModel.RemovePersonFromJsonFile(person);
+                MessageBox.Show("Person removed successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Failed to remove person.");
+            }
+        }
+
+        private void manageRelationshipsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ShowFormRelationships()
         {
-            Relationships 
+            ManageRelationships manageRelationshipsForm = new ManageRelationships(this);
+            manageRelationshipsForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); // Attach an event handler to FormClosed
+            manageRelationshipsForm.ShowDialog();
         }
-        
     }
 }
