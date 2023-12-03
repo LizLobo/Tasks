@@ -29,7 +29,6 @@ namespace Task2_HierarchicalStructure.Controller
 
         public List<Person> GetPeopleList()
         {
-            //After this runs there is one less person object in the PersonList --> Hence it doesn't get the PersonList in Memory.
             return _personModel.PersonList;
         }
 
