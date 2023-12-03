@@ -14,9 +14,6 @@ namespace Task2_HierarchicalStructure.Controller
     public class PersonController
     {
         
-           List<Person> parentObjects = new List<Person>();
-           List<Person> siblingObjects = new List<Person>();
-            List<Person> childrenObjects = new List<Person>();
 
         private PersonModel _personModel;
         

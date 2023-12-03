@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Task2_HierarchicalStructure.Forms
 {
-    public partial class Relationships : Form
+    public partial class ManageRelationships : Form
     {
-        public Relationships()
+        public ManageRelationships()
         {
             InitializeComponent();
         }

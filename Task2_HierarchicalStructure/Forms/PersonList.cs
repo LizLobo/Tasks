@@ -7,11 +7,13 @@ namespace Task2_HierarchicalStructure
 {
     public partial class PersonList : Form
     {
-        private PersonController _personController;
-        public PersonList(PersonController personController)
+        public PersonController _personController;
+        public PersonModel _personModel;
+        public PersonList(PersonController personController, PersonModel personModel)
         {
             InitializeComponent();
             _personController = personController;
+            _personModel = personModel;
             LoadDataGridView(); // Call a method to load or configure the DataGridView
             DisplayPeopleInDataGridView();
 
@@ -25,10 +27,7 @@ namespace Task2_HierarchicalStructure
             personDataGridView.Columns[1].Name = "Person";
             personDataGridView.Columns[2].Name = "Relations";
 
-            // Add rows to the DataGridView
-            personDataGridView.Rows.Add(1, "John", null);
-            personDataGridView.Rows.Add(2, "Alice", null);
-            // Add more rows as needed
+            
         }
 
         public void DisplayPeopleInDataGridView()
@@ -85,6 +84,10 @@ namespace Task2_HierarchicalStructure
             personInfoForm.ShowDialog();
         }
 
+        private void ShowFormRelationships()
+        {
+            Relationships 
+        }
         
     }
 }

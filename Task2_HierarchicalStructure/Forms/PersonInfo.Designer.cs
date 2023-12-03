@@ -51,9 +51,9 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            nameLabel.Location = new Point(229, 189);
+            nameLabel.Location = new Point(248, 202);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(74, 30);
+            nameLabel.Size = new Size(83, 32);
             nameLabel.TabIndex = 0;
             nameLabel.Text = "Name:";
             // 
@@ -61,9 +61,9 @@
             // 
             surnameLabel.AutoSize = true;
             surnameLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            surnameLabel.Location = new Point(229, 256);
+            surnameLabel.Location = new Point(248, 273);
             surnameLabel.Name = "surnameLabel";
-            surnameLabel.Size = new Size(100, 30);
+            surnameLabel.Size = new Size(114, 32);
             surnameLabel.TabIndex = 1;
             surnameLabel.Text = "Surname:";
             // 
@@ -71,18 +71,18 @@
             // 
             ageLabel.AutoSize = true;
             ageLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            ageLabel.Location = new Point(229, 323);
+            ageLabel.Location = new Point(248, 345);
             ageLabel.Name = "ageLabel";
-            ageLabel.Size = new Size(55, 30);
+            ageLabel.Size = new Size(61, 32);
             ageLabel.TabIndex = 2;
             ageLabel.Text = "Age:";
             // 
             // ageNumeric
             // 
-            ageNumeric.Location = new Point(367, 320);
+            ageNumeric.Location = new Point(398, 341);
             ageNumeric.Name = "ageNumeric";
-            ageNumeric.Size = new Size(162, 35);
-            ageNumeric.TabIndex = 3;
+            ageNumeric.Size = new Size(176, 39);
+            ageNumeric.TabIndex = 4;
             ageNumeric.TextAlign = HorizontalAlignment.Right;
             // 
             // surnameTextbox
@@ -90,28 +90,28 @@
             surnameTextbox.BackColor = Color.FromArgb(69, 73, 74);
             surnameTextbox.BorderStyle = BorderStyle.FixedSingle;
             surnameTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            surnameTextbox.Location = new Point(367, 254);
+            surnameTextbox.Location = new Point(398, 271);
             surnameTextbox.Name = "surnameTextbox";
-            surnameTextbox.Size = new Size(310, 35);
-            surnameTextbox.TabIndex = 4;
+            surnameTextbox.Size = new Size(336, 39);
+            surnameTextbox.TabIndex = 3;
             // 
             // nameTextbox
             // 
             nameTextbox.BackColor = Color.FromArgb(69, 73, 74);
             nameTextbox.BorderStyle = BorderStyle.FixedSingle;
             nameTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            nameTextbox.Location = new Point(369, 188);
+            nameTextbox.Location = new Point(400, 201);
             nameTextbox.Name = "nameTextbox";
-            nameTextbox.Size = new Size(308, 35);
-            nameTextbox.TabIndex = 5;
+            nameTextbox.Size = new Size(334, 39);
+            nameTextbox.TabIndex = 2;
             // 
             // sexLabel
             // 
             sexLabel.AutoSize = true;
             sexLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            sexLabel.Location = new Point(229, 390);
+            sexLabel.Location = new Point(248, 416);
             sexLabel.Name = "sexLabel";
-            sexLabel.Size = new Size(50, 30);
+            sexLabel.Size = new Size(56, 32);
             sexLabel.TabIndex = 6;
             sexLabel.Text = "Sex:";
             // 
@@ -119,9 +119,9 @@
             // 
             genderLabel.AutoSize = true;
             genderLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            genderLabel.Location = new Point(229, 457);
+            genderLabel.Location = new Point(248, 487);
             genderLabel.Name = "genderLabel";
-            genderLabel.Size = new Size(85, 30);
+            genderLabel.Size = new Size(97, 32);
             genderLabel.TabIndex = 7;
             genderLabel.Text = "Gender:";
             // 
@@ -130,18 +130,18 @@
             idNumberTextbox.BackColor = Color.FromArgb(69, 73, 74);
             idNumberTextbox.BorderStyle = BorderStyle.FixedSingle;
             idNumberTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            idNumberTextbox.Location = new Point(367, 122);
+            idNumberTextbox.Location = new Point(398, 130);
             idNumberTextbox.Name = "idNumberTextbox";
-            idNumberTextbox.Size = new Size(310, 35);
-            idNumberTextbox.TabIndex = 13;
+            idNumberTextbox.Size = new Size(336, 39);
+            idNumberTextbox.TabIndex = 1;
             // 
             // idNumberLabel
             // 
             idNumberLabel.AutoSize = true;
             idNumberLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            idNumberLabel.Location = new Point(227, 122);
+            idNumberLabel.Location = new Point(246, 130);
             idNumberLabel.Name = "idNumberLabel";
-            idNumberLabel.Size = new Size(117, 30);
+            idNumberLabel.Size = new Size(133, 32);
             idNumberLabel.TabIndex = 14;
             idNumberLabel.Text = "ID number:";
             // 
@@ -150,38 +150,38 @@
             sexComboBox.DrawMode = DrawMode.OwnerDrawVariable;
             sexComboBox.FormattingEnabled = true;
             sexComboBox.Items.AddRange(new object[] { "Female", "Male" });
-            sexComboBox.Location = new Point(367, 386);
+            sexComboBox.Location = new Point(398, 412);
             sexComboBox.Name = "sexComboBox";
-            sexComboBox.Size = new Size(162, 36);
-            sexComboBox.TabIndex = 15;
+            sexComboBox.Size = new Size(175, 40);
+            sexComboBox.TabIndex = 5;
             // 
             // genderComboBox
             // 
             genderComboBox.DrawMode = DrawMode.OwnerDrawVariable;
             genderComboBox.FormattingEnabled = true;
             genderComboBox.Items.AddRange(new object[] { "Female", "Male", "Other" });
-            genderComboBox.Location = new Point(367, 453);
+            genderComboBox.Location = new Point(398, 483);
             genderComboBox.Name = "genderComboBox";
-            genderComboBox.Size = new Size(162, 36);
-            genderComboBox.TabIndex = 16;
+            genderComboBox.Size = new Size(175, 40);
+            genderComboBox.TabIndex = 6;
             // 
             // addPersonSaveButton
             // 
-            addPersonSaveButton.Location = new Point(165, 770);
+            addPersonSaveButton.Location = new Point(179, 821);
             addPersonSaveButton.Name = "addPersonSaveButton";
             addPersonSaveButton.Padding = new Padding(5);
-            addPersonSaveButton.Size = new Size(232, 63);
-            addPersonSaveButton.TabIndex = 17;
+            addPersonSaveButton.Size = new Size(251, 67);
+            addPersonSaveButton.TabIndex = 8;
             addPersonSaveButton.Text = "Save Person";
             addPersonSaveButton.Click += addPersonSaveButton_Click;
             // 
             // addMemberCancelButton
             // 
-            addMemberCancelButton.Location = new Point(448, 770);
+            addMemberCancelButton.Location = new Point(485, 821);
             addMemberCancelButton.Name = "addMemberCancelButton";
             addMemberCancelButton.Padding = new Padding(5);
-            addMemberCancelButton.Size = new Size(229, 63);
-            addMemberCancelButton.TabIndex = 18;
+            addMemberCancelButton.Size = new Size(248, 67);
+            addMemberCancelButton.TabIndex = 9;
             addMemberCancelButton.Text = "Cancel";
             addMemberCancelButton.Click += addPersonCancelButton_Click;
             // 
@@ -189,27 +189,27 @@
             // 
             deceasedLabel.AutoSize = true;
             deceasedLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            deceasedLabel.Location = new Point(227, 524);
+            deceasedLabel.Location = new Point(246, 559);
             deceasedLabel.Name = "deceasedLabel";
-            deceasedLabel.Size = new Size(108, 30);
+            deceasedLabel.Size = new Size(122, 32);
             deceasedLabel.TabIndex = 19;
             deceasedLabel.Text = "Deceased:";
             // 
             // relationshipCheckBox
             // 
             relationshipCheckBox.AutoSize = true;
-            relationshipCheckBox.Location = new Point(400, 520);
+            relationshipCheckBox.Location = new Point(433, 555);
             relationshipCheckBox.Name = "relationshipCheckBox";
-            relationshipCheckBox.Size = new Size(81, 34);
-            relationshipCheckBox.TabIndex = 20;
+            relationshipCheckBox.Size = new Size(94, 36);
+            relationshipCheckBox.TabIndex = 7;
             relationshipCheckBox.Text = "  Yes";
             // 
             // PersonInfo
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
-            ClientSize = new Size(894, 895);
+            ClientSize = new Size(969, 955);
             Controls.Add(relationshipCheckBox);
             Controls.Add(deceasedLabel);
             Controls.Add(addMemberCancelButton);

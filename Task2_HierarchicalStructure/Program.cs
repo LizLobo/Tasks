@@ -24,19 +24,9 @@ namespace Task2_HierarchicalStructure
             PersonModel personModel = new PersonModel(); 
             PersonController personController = new PersonController(personModel);
 
-
-
-            
-
-
-
-
-
-
-
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            Application.Run(new PersonList(personController));
+            Application.Run(new PersonList(personController, personModel));
         }
     }
 }

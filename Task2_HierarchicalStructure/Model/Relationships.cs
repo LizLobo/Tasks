@@ -9,14 +9,12 @@ namespace Task2_HierarchicalStructure.Model
     public class Relationships
     {
         public Person RelatedPerson { get; set; }
-        public int RelatedPersonID { get; }
    
         public RelationshipType Type { get; }
 
-    public Relationships( Person relatedPerson, int relatedPersonID, RelationshipType type)
+    public Relationships( Person relatedPerson, RelationshipType type)
     {
         RelatedPerson = relatedPerson;
-        RelatedPersonID = relatedPersonID;
         Type = type;
     }
 

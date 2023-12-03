@@ -21,7 +21,7 @@ namespace Task2_HierarchicalStructure
         public PersonInfo(PersonList personListForm)
         {
             InitializeComponent();
-            personModel = new PersonModel();
+            personModel = personListForm._personModel;
             _personController = new PersonController(personModel);
             this.personListForm = personListForm;
 
