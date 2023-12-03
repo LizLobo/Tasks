@@ -28,10 +28,27 @@ namespace Task2_HierarchicalStructure.Model
 
         public bool RemovePerson(Person person)
         {
-            
-                return PersonList.Remove(person);
-            
-            
+
+            return PersonList.Remove(person);    
+
+        }
+
+        public void AddRelationship(Person mainPerson, Person relatedPerson, RelationshipType relationshipType)
+        {
+            if (relationshipType == RelationshipType.Parent)
+            {
+                bool isChild = relatedPerson.Relationships.Any(r => r.Type == RelationshipType.Child && r.RelatedPerson == mainPerson);
+
+                if (isChild)
+                {
+                    MessageBox.Show("Cannot add parent relationship if already a child.");
+                }
+            }
+
+            Relationships newRelationship = new Relationships(relatedPerson, relationshipType);
+
+            mainPerson.AddRelationship(relatedPerson, relationshipType);
+
 
         }
 
@@ -69,13 +86,13 @@ namespace Task2_HierarchicalStructure.Model
 
         public void RemovePersonFromJsonFile(Person person)
         {
-            // Load existing data from the JSON file
+           
             List<Person> existingData = JsonConvert.DeserializeObject<List<Person>>(File.ReadAllText(jsonFilePath));
 
-            // Remove the specified person
-            existingData.RemoveAll(p => p.Id == person.Id); // Modify this based on your comparison logic
+          
+            existingData.RemoveAll(p => p.Id == person.Id); 
 
-            // Serialize and save the updated data back to the JSON file
+            
             File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(existingData, Formatting.Indented));
         }
 

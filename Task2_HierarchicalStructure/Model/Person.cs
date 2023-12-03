@@ -20,7 +20,7 @@ namespace Task2_HierarchicalStructure.Model
         public bool IsDeceased { get; set; }
 
 
-        public List<Relationships>? Relationships { get; set; }
+        public List<Relationships>? Relationships { get; private set; }
 
 
     public Person(string id, string name, string surname, int age, string sex, string gender, bool isDeceased)
@@ -34,6 +34,12 @@ namespace Task2_HierarchicalStructure.Model
             IsDeceased = isDeceased;
             Relationships = new List<Relationships>();
     }
+
+        public void AddRelationship(Person relatedPerson, RelationshipType relationshipType)
+        {
+            Relationships.Add(new Relationships(relatedPerson, relationshipType));
+        }
+
 
     }
 

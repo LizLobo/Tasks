@@ -1,6 +1,7 @@
 using System.Text;
 using System.Windows.Forms;
 using Task2_HierarchicalStructure.Controller;
+using Task2_HierarchicalStructure.Forms;
 using Task2_HierarchicalStructure.Model;
 
 namespace Task2_HierarchicalStructure
@@ -80,7 +81,7 @@ namespace Task2_HierarchicalStructure
         private void ShowFormPersonInfo()
         {
             PersonInfo personInfoForm = new PersonInfo(this);
-            personInfoForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); // Attach an event handler to FormClosed
+            personInfoForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); 
             personInfoForm.ShowDialog();
         }
 
@@ -134,14 +135,14 @@ namespace Task2_HierarchicalStructure
 
         private void manageRelationshipsButton_Click(object sender, EventArgs e)
         {
-
+            ShowFormManageRelationships();
         }
 
-        private void ShowFormRelationships()
+        private void ShowFormManageRelationships()
         {
             ManageRelationships manageRelationshipsForm = new ManageRelationships(this);
-            manageRelationshipsForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); // Attach an event handler to FormClosed
-            manageRelationshipsForm.ShowDialog();
+            manageRelationshipsForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView();
+            manageRelationshipsForm.Show();
         }
     }
 }

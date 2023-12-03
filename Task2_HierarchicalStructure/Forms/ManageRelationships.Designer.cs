@@ -40,7 +40,7 @@
             cancelRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
             removeRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
             addRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
-            nameTextbox = new ReaLTaiizor.Controls.CrownTextBox();
+            mainPersonTextbox = new ReaLTaiizor.Controls.CrownTextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -85,9 +85,9 @@
             label1.ForeColor = Color.DimGray;
             label1.Location = new Point(13, 4);
             label1.Name = "label1";
-            label1.Size = new Size(180, 38);
+            label1.Size = new Size(288, 38);
             label1.TabIndex = 2;
-            label1.Text = "Relationships";
+            label1.Text = "Manage Relationships";
             // 
             // mainPersonLabel
             // 
@@ -157,6 +157,7 @@
             cancelRelationshipButton.Size = new Size(254, 49);
             cancelRelationshipButton.TabIndex = 25;
             cancelRelationshipButton.Text = "Cancel";
+            cancelRelationshipButton.Click += cancelRelationshipButton_Click;
             // 
             // removeRelationshipButton
             // 
@@ -175,16 +176,17 @@
             addRelationshipButton.Size = new Size(254, 49);
             addRelationshipButton.TabIndex = 23;
             addRelationshipButton.Text = "Add Relationship";
+            addRelationshipButton.Click += addRelationshipButton_Click;
             // 
-            // nameTextbox
+            // mainPersonTextbox
             // 
-            nameTextbox.BackColor = Color.FromArgb(69, 73, 74);
-            nameTextbox.BorderStyle = BorderStyle.FixedSingle;
-            nameTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            nameTextbox.Location = new Point(188, 326);
-            nameTextbox.Name = "nameTextbox";
-            nameTextbox.Size = new Size(189, 39);
-            nameTextbox.TabIndex = 26;
+            mainPersonTextbox.BackColor = Color.FromArgb(69, 73, 74);
+            mainPersonTextbox.BorderStyle = BorderStyle.FixedSingle;
+            mainPersonTextbox.ForeColor = Color.FromArgb(220, 220, 220);
+            mainPersonTextbox.Location = new Point(188, 326);
+            mainPersonTextbox.Name = "mainPersonTextbox";
+            mainPersonTextbox.Size = new Size(189, 39);
+            mainPersonTextbox.TabIndex = 26;
             // 
             // ManageRelationships
             // 
@@ -192,7 +194,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
             ClientSize = new Size(1168, 480);
-            Controls.Add(nameTextbox);
+            Controls.Add(mainPersonTextbox);
             Controls.Add(cancelRelationshipButton);
             Controls.Add(removeRelationshipButton);
             Controls.Add(addRelationshipButton);
@@ -227,6 +229,6 @@
         private ReaLTaiizor.Controls.CrownButton cancelRelationshipButton;
         private ReaLTaiizor.Controls.CrownButton removeRelationshipButton;
         private ReaLTaiizor.Controls.CrownButton addRelationshipButton;
-        private ReaLTaiizor.Controls.CrownTextBox nameTextbox;
+        private ReaLTaiizor.Controls.CrownTextBox mainPersonTextbox;
     }
 }

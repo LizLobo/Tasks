@@ -60,16 +60,6 @@
     "Relationships": []
   },
   {
-    "Id": "4563cced-e738-4e96-a4e7-7cdd0d387399",
-    "Name": "Jen",
-    "Surname": "Jacobs",
-    "Age": 50,
-    "Sex": "Female",
-    "Gender": "Female",
-    "IsDeceased": false,
-    "Relationships": []
-  },
-  {
     "Id": "4893831c-cd45-4aaa-bc81-e3b1c50f1155",
     "Name": "Lola",
     "Surname": "Lolz",
