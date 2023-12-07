@@ -20,8 +20,9 @@ namespace Task2_HierarchicalStructure
 
 
 
-            //Instantiate the model, controller and the view
-            PersonModel personModel = new PersonModel(); 
+            //Instantiate
+            string jsonFilePath = @"..\..\..\Data\JSONFamily.json";
+            PersonModel personModel = PersonModel.GetInstance(jsonFilePath);
             PersonController personController = new PersonController(personModel);
 
             // To customize application configuration such as set high DPI settings or default font,

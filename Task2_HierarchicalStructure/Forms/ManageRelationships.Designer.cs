@@ -32,9 +32,9 @@
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             label1 = new Label();
             mainPersonLabel = new ReaLTaiizor.Controls.CrownLabel();
-            crownComboBox1 = new ReaLTaiizor.Controls.CrownComboBox();
+            relationshipTypeComboBox = new ReaLTaiizor.Controls.CrownComboBox();
             relationshipTypeLabel = new ReaLTaiizor.Controls.CrownLabel();
-            crownComboBox2 = new ReaLTaiizor.Controls.CrownComboBox();
+            relatedPersonsComboBox = new ReaLTaiizor.Controls.CrownComboBox();
             relatedPersonLabel = new ReaLTaiizor.Controls.CrownLabel();
             toLabel = new ReaLTaiizor.Controls.CrownLabel();
             cancelRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
@@ -51,8 +51,9 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 1, 2, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1168, 44);
+            panel1.Size = new Size(629, 21);
             panel1.TabIndex = 6;
             // 
             // nightControlBox1
@@ -69,7 +70,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1029, 0);
+            nightControlBox1.Location = new Point(490, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -83,9 +84,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(13, 4);
+            label1.Location = new Point(7, 2);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(288, 38);
+            label1.Size = new Size(143, 19);
             label1.TabIndex = 2;
             label1.Text = "Manage Relationships";
             // 
@@ -93,49 +95,54 @@
             // 
             mainPersonLabel.AutoSize = true;
             mainPersonLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            mainPersonLabel.Location = new Point(205, 259);
+            mainPersonLabel.Location = new Point(110, 121);
+            mainPersonLabel.Margin = new Padding(2, 0, 2, 0);
             mainPersonLabel.Name = "mainPersonLabel";
-            mainPersonLabel.Size = new Size(148, 32);
+            mainPersonLabel.Size = new Size(73, 15);
             mainPersonLabel.TabIndex = 16;
             mainPersonLabel.Text = "Main person";
             // 
-            // crownComboBox1
+            // relationshipTypeComboBox
             // 
-            crownComboBox1.DrawMode = DrawMode.OwnerDrawVariable;
-            crownComboBox1.FormattingEnabled = true;
-            crownComboBox1.Items.AddRange(new object[] { "Female", "Male" });
-            crownComboBox1.Location = new Point(440, 326);
-            crownComboBox1.Name = "crownComboBox1";
-            crownComboBox1.Size = new Size(189, 40);
-            crownComboBox1.TabIndex = 19;
+            relationshipTypeComboBox.DrawMode = DrawMode.OwnerDrawVariable;
+            relationshipTypeComboBox.FormattingEnabled = true;
+            relationshipTypeComboBox.Items.AddRange(new object[] { "Female", "Male" });
+            relationshipTypeComboBox.Location = new Point(237, 153);
+            relationshipTypeComboBox.Margin = new Padding(2, 1, 2, 1);
+            relationshipTypeComboBox.Name = "relationshipTypeComboBox";
+            relationshipTypeComboBox.Size = new Size(115, 24);
+            relationshipTypeComboBox.TabIndex = 19;
             // 
             // relationshipTypeLabel
             // 
             relationshipTypeLabel.AutoSize = true;
             relationshipTypeLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            relationshipTypeLabel.Location = new Point(440, 259);
+            relationshipTypeLabel.Location = new Point(237, 121);
+            relationshipTypeLabel.Margin = new Padding(2, 0, 2, 0);
             relationshipTypeLabel.Name = "relationshipTypeLabel";
-            relationshipTypeLabel.Size = new Size(202, 32);
+            relationshipTypeLabel.Size = new Size(99, 15);
             relationshipTypeLabel.TabIndex = 18;
             relationshipTypeLabel.Text = "Relationship Type";
             // 
-            // crownComboBox2
+            // relatedPersonsComboBox
             // 
-            crownComboBox2.DrawMode = DrawMode.OwnerDrawVariable;
-            crownComboBox2.FormattingEnabled = true;
-            crownComboBox2.Items.AddRange(new object[] { "Female", "Male" });
-            crownComboBox2.Location = new Point(798, 326);
-            crownComboBox2.Name = "crownComboBox2";
-            crownComboBox2.Size = new Size(175, 40);
-            crownComboBox2.TabIndex = 21;
+            relatedPersonsComboBox.DrawMode = DrawMode.OwnerDrawVariable;
+            relatedPersonsComboBox.FormattingEnabled = true;
+            relatedPersonsComboBox.Items.AddRange(new object[] { "Female", "Male" });
+            relatedPersonsComboBox.Location = new Point(419, 153);
+            relatedPersonsComboBox.Margin = new Padding(2, 1, 2, 1);
+            relatedPersonsComboBox.Name = "relatedPersonsComboBox";
+            relatedPersonsComboBox.Size = new Size(181, 24);
+            relatedPersonsComboBox.TabIndex = 21;
             // 
             // relatedPersonLabel
             // 
             relatedPersonLabel.AutoSize = true;
             relatedPersonLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            relatedPersonLabel.Location = new Point(816, 259);
+            relatedPersonLabel.Location = new Point(439, 121);
+            relatedPersonLabel.Margin = new Padding(2, 0, 2, 0);
             relatedPersonLabel.Name = "relatedPersonLabel";
-            relatedPersonLabel.Size = new Size(173, 32);
+            relatedPersonLabel.Size = new Size(85, 15);
             relatedPersonLabel.TabIndex = 20;
             relatedPersonLabel.Text = "Related person";
             // 
@@ -143,37 +150,41 @@
             // 
             toLabel.AutoSize = true;
             toLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            toLabel.Location = new Point(698, 330);
+            toLabel.Location = new Point(376, 155);
+            toLabel.Margin = new Padding(2, 0, 2, 0);
             toLabel.Name = "toLabel";
-            toLabel.Size = new Size(39, 32);
+            toLabel.Size = new Size(19, 15);
             toLabel.TabIndex = 22;
             toLabel.Text = "To";
             // 
             // cancelRelationshipButton
             // 
-            cancelRelationshipButton.Location = new Point(736, 109);
+            cancelRelationshipButton.Location = new Point(396, 51);
+            cancelRelationshipButton.Margin = new Padding(2, 1, 2, 1);
             cancelRelationshipButton.Name = "cancelRelationshipButton";
-            cancelRelationshipButton.Padding = new Padding(5);
-            cancelRelationshipButton.Size = new Size(254, 49);
+            cancelRelationshipButton.Padding = new Padding(3, 2, 3, 2);
+            cancelRelationshipButton.Size = new Size(137, 23);
             cancelRelationshipButton.TabIndex = 25;
             cancelRelationshipButton.Text = "Cancel";
             cancelRelationshipButton.Click += cancelRelationshipButton_Click;
             // 
             // removeRelationshipButton
             // 
-            removeRelationshipButton.Location = new Point(447, 109);
+            removeRelationshipButton.Location = new Point(241, 51);
+            removeRelationshipButton.Margin = new Padding(2, 1, 2, 1);
             removeRelationshipButton.Name = "removeRelationshipButton";
-            removeRelationshipButton.Padding = new Padding(5);
-            removeRelationshipButton.Size = new Size(254, 49);
+            removeRelationshipButton.Padding = new Padding(3, 2, 3, 2);
+            removeRelationshipButton.Size = new Size(137, 23);
             removeRelationshipButton.TabIndex = 24;
             removeRelationshipButton.Text = "Remove Relationship";
             // 
             // addRelationshipButton
             // 
-            addRelationshipButton.Location = new Point(161, 109);
+            addRelationshipButton.Location = new Point(87, 51);
+            addRelationshipButton.Margin = new Padding(2, 1, 2, 1);
             addRelationshipButton.Name = "addRelationshipButton";
-            addRelationshipButton.Padding = new Padding(5);
-            addRelationshipButton.Size = new Size(254, 49);
+            addRelationshipButton.Padding = new Padding(3, 2, 3, 2);
+            addRelationshipButton.Size = new Size(137, 23);
             addRelationshipButton.TabIndex = 23;
             addRelationshipButton.Text = "Add Relationship";
             addRelationshipButton.Click += addRelationshipButton_Click;
@@ -183,29 +194,31 @@
             mainPersonTextbox.BackColor = Color.FromArgb(69, 73, 74);
             mainPersonTextbox.BorderStyle = BorderStyle.FixedSingle;
             mainPersonTextbox.ForeColor = Color.FromArgb(220, 220, 220);
-            mainPersonTextbox.Location = new Point(188, 326);
+            mainPersonTextbox.Location = new Point(101, 153);
+            mainPersonTextbox.Margin = new Padding(2, 1, 2, 1);
             mainPersonTextbox.Name = "mainPersonTextbox";
-            mainPersonTextbox.Size = new Size(189, 39);
+            mainPersonTextbox.Size = new Size(103, 23);
             mainPersonTextbox.TabIndex = 26;
             // 
             // ManageRelationships
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
-            ClientSize = new Size(1168, 480);
+            ClientSize = new Size(629, 225);
             Controls.Add(mainPersonTextbox);
             Controls.Add(cancelRelationshipButton);
             Controls.Add(removeRelationshipButton);
             Controls.Add(addRelationshipButton);
             Controls.Add(toLabel);
-            Controls.Add(crownComboBox2);
+            Controls.Add(relatedPersonsComboBox);
             Controls.Add(relatedPersonLabel);
-            Controls.Add(crownComboBox1);
+            Controls.Add(relationshipTypeComboBox);
             Controls.Add(relationshipTypeLabel);
             Controls.Add(mainPersonLabel);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 1, 2, 1);
             Name = "ManageRelationships";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage Relationships";
@@ -221,9 +234,9 @@
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private Label label1;
         private ReaLTaiizor.Controls.CrownLabel mainPersonLabel;
-        private ReaLTaiizor.Controls.CrownComboBox crownComboBox1;
+        private ReaLTaiizor.Controls.CrownComboBox relationshipTypeComboBox;
         private ReaLTaiizor.Controls.CrownLabel relationshipTypeLabel;
-        private ReaLTaiizor.Controls.CrownComboBox crownComboBox2;
+        private ReaLTaiizor.Controls.CrownComboBox relatedPersonsComboBox;
         private ReaLTaiizor.Controls.CrownLabel relatedPersonLabel;
         private ReaLTaiizor.Controls.CrownLabel toLabel;
         private ReaLTaiizor.Controls.CrownButton cancelRelationshipButton;

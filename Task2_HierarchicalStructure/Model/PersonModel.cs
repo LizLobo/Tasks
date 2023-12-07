@@ -10,26 +10,40 @@ namespace Task2_HierarchicalStructure.Model
    
         public class PersonModel
         {
-        //Path for JSON file of person objects
-        private string jsonFilePath = @"..\..\..\Data\JSONFamily.json";
-            public List<Person> PersonList { get; private set; }
+            private static PersonModel instance;
+            private JSONFileDatabase jsonFileDatabase = new JSONFileDatabase();
+            public List<Person> People { get; private set; }
 
-            public PersonModel()
+
+
+            private PersonModel(string jsonFilePath)
             {
-            GetPersonsFromJSONFile(jsonFilePath);
+            People = jsonFileDatabase.LoadAllPersonsFromJSONFile(jsonFilePath);
+            }
+
+        //Create a single instance of People list to be used across the whole application:
+        // Using Singleton Pattern
+
+        public static PersonModel GetInstance(string jsonFilePath) 
+        {
+            if (instance == null)
+            {
+                instance = new PersonModel(jsonFilePath);
+            }
+            return instance;
         }
 
            
             public void AddPerson(Person person)
             {
-                PersonList.Add(person);
-                SavePersonsToJsonFile();
+                People.Add(person);
+                SaveAPersonToJsonFile();
             }
 
         public bool RemovePerson(Person person)
         {
 
-            return PersonList.Remove(person);    
+            return People.Remove(person);    
 
         }
 
@@ -51,51 +65,7 @@ namespace Task2_HierarchicalStructure.Model
 
 
         }
-
-        public void SavePersonsToJsonFile()
-        {
-            try
-            {
-                string jsonData = JsonConvert.SerializeObject(PersonList, Formatting.Indented);
-                File.WriteAllText(jsonFilePath, jsonData);
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions here
-                Console.WriteLine($"Error saving to JSON file: {ex.Message}");
-            }
-        }
-        public void GetPersonsFromJSONFile(string filePath)
-        {
-            try
-            {
-                string jsonData = File.ReadAllText(jsonFilePath);
-                PersonList = JsonConvert.DeserializeObject<List<Person>>(jsonData);
-
-                if (PersonList == null)
-                {
-                    PersonList = new List<Person>();
-                }
-            }
-            catch (Exception ex)
-            {
-               
-                PersonList = new List<Person>();
-            }
-        }
-
-        public void RemovePersonFromJsonFile(Person person)
-        {
-           
-            List<Person> existingData = JsonConvert.DeserializeObject<List<Person>>(File.ReadAllText(jsonFilePath));
-
-          
-            existingData.RemoveAll(p => p.Id == person.Id); 
-
-            
-            File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(existingData, Formatting.Indented));
-        }
-
+       
 
 
 

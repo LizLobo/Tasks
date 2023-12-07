@@ -13,29 +13,29 @@ namespace Task2_HierarchicalStructure.Controller
 {
     public class PersonController
     {
-        
 
-        private PersonModel _personModel;
-        
+
+        private PersonModel personModel = PersonModel.GetInstance(string jsonFilePath);
+
         public PersonController(PersonModel personModel) 
         {
-            _personModel = personModel;
+            personModel = personModel;
            
         }
         public void AddPerson(Person person)
         {
-           _personModel.AddPerson(person);
+           personModel.AddPerson(person);
         }
 
         public List<Person> GetPeopleList()
         {
-            return _personModel.PersonList;
+            return personModel.People;
         }
 
 
         public bool RemovePerson(Person person)
         {
-            return _personModel.RemovePerson(person);
+            return personModel.RemovePerson(person);
         }
 
         

@@ -1,5 +1,6 @@
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Task2_HierarchicalStructure.Controller;
 using Task2_HierarchicalStructure.Forms;
 using Task2_HierarchicalStructure.Model;
@@ -135,12 +136,30 @@ namespace Task2_HierarchicalStructure
 
         private void manageRelationshipsButton_Click(object sender, EventArgs e)
         {
-            ShowFormManageRelationships();
+            if (personDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = personDataGridView.SelectedRows[0];
+
+                Person mainPerson = GetPersonFromSelectedRow(selectedRow);
+
+                if (mainPerson != null)
+                {
+                    ShowFormManageRelationships(mainPerson);
+                }
+
+                else
+                {
+                    MessageBox.Show("Please select a person from the list.");
+                }
+            }
         }
 
-        private void ShowFormManageRelationships()
+        private void ShowFormManageRelationships(Person mainPerson)
         {
-            ManageRelationships manageRelationshipsForm = new ManageRelationships(this);
+            ManageRelationships manageRelationshipsForm = new ManageRelationships(this, _personController.GetPeopleList());
+            manageRelationshipsForm.SetMainPersonDetails(mainPerson);
+            manageRelationshipsForm.PopulateRelatedPersonCombo(mainPerson.Id);
+            manageRelationshipsForm.PopulateRelationshipTypesCombo();
             manageRelationshipsForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView();
             manageRelationshipsForm.Show();
         }

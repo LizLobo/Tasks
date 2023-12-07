@@ -35,6 +35,7 @@ namespace Task2_HierarchicalStructure.Model
             Relationships = new List<Relationships>();
     }
 
+        //@LIZ this needs to move to model
         public void AddRelationship(Person relatedPerson, RelationshipType relationshipType)
         {
             Relationships.Add(new Relationships(relatedPerson, relationshipType));
