@@ -13,13 +13,13 @@ namespace Task2_HierarchicalStructure.Controller
 {
     public class PersonController
     {
+        PersonModel personModel = PersonModel.GetInstance();
 
 
-        private PersonModel personModel = PersonModel.GetInstance(string jsonFilePath);
-
-        public PersonController(PersonModel personModel) 
+        public PersonController() 
         {
-            personModel = personModel;
+           
+            
            
         }
         public void AddPerson(Person person)

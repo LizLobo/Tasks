@@ -14,15 +14,17 @@ namespace Task2_HierarchicalStructure
 {
     public partial class PersonInfo : Form
     {
+        //@LIZ add _ to fields if private
         private readonly PersonController _personController;
-        private PersonModel personModel;
+        private readonly string jsonFilePath;
+        PersonModel personModel = PersonModel.GetInstance();
+
         private PersonList personListForm;
 
         public PersonInfo(PersonList personListForm)
         {
             InitializeComponent();
-            personModel = personListForm._personModel;
-            _personController = new PersonController(personModel);
+            _personController = new PersonController();
             this.personListForm = personListForm;
 
             string uniqueId = GenerateUniqueId(); // Generate a unique ID (you might have your own way to generate IDs)

@@ -9,21 +9,19 @@ namespace Task2_HierarchicalStructure
 {
     public partial class PersonList : Form
     {
-        public PersonController _personController;
-        public PersonModel _personModel;
-        public PersonList(PersonController personController, PersonModel personModel)
+        public PersonController personController = new PersonController();
+        private readonly string jsonFilePath;
+
+        public PersonList()
         {
             InitializeComponent();
-            _personController = personController;
-            _personModel = personModel;
-            LoadDataGridView(); // Call a method to load or configure the DataGridView
+            LoadDataGridView(); 
             DisplayPeopleInDataGridView();
 
         }
 
         private void LoadDataGridView()
         {
-            // Access the DataGridView and modify its properties or data
             personDataGridView.ColumnCount = 3;
             personDataGridView.Columns[0].Name = "ID";
             personDataGridView.Columns[1].Name = "Person";
@@ -34,17 +32,13 @@ namespace Task2_HierarchicalStructure
 
         public void DisplayPeopleInDataGridView()
         {
-
-
-            // Clear existing rows
             personDataGridView.Rows.Clear();
 
-            foreach (Person person in _personController.GetPeopleList())
+            foreach (Person person in personController.GetPeopleList())
             {
-                // Extract relationships information for display
+                
                 string relationshipsInfo = GetRelationshipsInfo(person);
 
-                // Add a new row to the DataGridView
                 personDataGridView.Rows.Add(person.Id, person.Name + " " + person.Surname, relationshipsInfo);
             }
         }
@@ -116,16 +110,15 @@ namespace Task2_HierarchicalStructure
         {
             string personId = selectedRow.Cells["ID"].Value.ToString(); ;
 
-            return _personController.GetPeopleList().FirstOrDefault(p => p.Id == personId);
+            return personController.GetPeopleList().FirstOrDefault(p => p.Id == personId);
         }
 
         private void RemovePerson(Person person)
         {
-            bool removed = _personController.RemovePerson(person);
+            bool removed = personController.RemovePerson(person);
 
             if (removed)
             {
-                _personModel.RemovePersonFromJsonFile(person);
                 MessageBox.Show("Person removed successfully!");
             }
             else
@@ -156,7 +149,7 @@ namespace Task2_HierarchicalStructure
 
         private void ShowFormManageRelationships(Person mainPerson)
         {
-            ManageRelationships manageRelationshipsForm = new ManageRelationships(this, _personController.GetPeopleList());
+            ManageRelationships manageRelationshipsForm = new ManageRelationships(this, personController.GetPeopleList());
             manageRelationshipsForm.SetMainPersonDetails(mainPerson);
             manageRelationshipsForm.PopulateRelatedPersonCombo(mainPerson.Id);
             manageRelationshipsForm.PopulateRelationshipTypesCombo();

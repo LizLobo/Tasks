@@ -11,24 +11,24 @@ namespace Task2_HierarchicalStructure.Model
         public class PersonModel
         {
             private static PersonModel instance;
-            private JSONFileDatabase jsonFileDatabase = new JSONFileDatabase();
+           
             public List<Person> People { get; private set; }
 
+        
 
-
-            private PersonModel(string jsonFilePath)
+            private PersonModel()
             {
-            People = jsonFileDatabase.LoadAllPersonsFromJSONFile(jsonFilePath);
+            People = JSONFileDatabase.LoadAllPersonsFromJSONFile();
             }
 
         //Create a single instance of People list to be used across the whole application:
         // Using Singleton Pattern
 
-        public static PersonModel GetInstance(string jsonFilePath) 
+        public static PersonModel GetInstance() 
         {
             if (instance == null)
             {
-                instance = new PersonModel(jsonFilePath);
+                instance = new PersonModel();
             }
             return instance;
         }
@@ -37,12 +37,12 @@ namespace Task2_HierarchicalStructure.Model
             public void AddPerson(Person person)
             {
                 People.Add(person);
-                SaveAPersonToJsonFile();
+            JSONFileDatabase.SaveAllPersonsToJsonFile( People);
             }
 
         public bool RemovePerson(Person person)
         {
-
+            JSONFileDatabase.RemoveAPersonFromJsonFile(person);
             return People.Remove(person);    
 
         }

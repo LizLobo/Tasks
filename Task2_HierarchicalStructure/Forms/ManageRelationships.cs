@@ -16,7 +16,7 @@ namespace Task2_HierarchicalStructure.Forms
     {
 
         private readonly PersonController _personController;
-        private PersonModel personModel;
+        PersonModel personModel = PersonModel.GetInstance();
         private PersonList personListForm;
 
         private List<Person> allPersons;
@@ -24,8 +24,8 @@ namespace Task2_HierarchicalStructure.Forms
         public ManageRelationships(PersonList personListForm, List<Person> persons)
         {
             InitializeComponent();
-            personModel = personListForm._personModel;
-            _personController = new PersonController(personModel);
+           
+            _personController = new PersonController();
             this.personListForm = personListForm;
             allPersons = persons;
 
@@ -44,15 +44,17 @@ namespace Task2_HierarchicalStructure.Forms
             relationshipTypeComboBox.DataSource = Enum.GetValues(typeof(RelationshipType));
         }
 
-
+        //@LIZ Iterate through the relatedPersons list to bring back each Person object's name and the value of their ID.
         public void PopulateRelatedPersonCombo(string mainPersonId) 
         {
             var relatedPersons = allPersons.Where(p => p.Id != mainPersonId).ToList();
             relatedPersonsComboBox.DataSource = relatedPersons;
-            relatedPersonsComboBox.DisplayMember = $"{relatedPersons.Name}";
+            relatedPersonsComboBox.DisplayMember = "Name";
             relatedPersonsComboBox.ValueMember = "Id";
 
         }
+
+
         private void addRelationshipButton_Click(object sender, EventArgs e)
         {
 

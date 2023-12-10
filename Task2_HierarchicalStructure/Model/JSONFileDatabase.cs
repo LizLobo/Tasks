@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Task2_HierarchicalStructure.Model
 {
-    public class JSONFileDatabase
+    public static class JSONFileDatabase
     {
-        
+        static string jsonFilePath = @"..\..\..\Data\JSONFamily.json";
 
-        //@LIZ needs to be renamed.
-        public void SaveAllPersonsToJsonFile(string jsonFilePath, List<Person> people)
+       
+        public static void SaveAllPersonsToJsonFile(List<Person> people)
         {
             try
             {
@@ -21,13 +21,13 @@ namespace Task2_HierarchicalStructure.Model
             }
             catch (Exception ex)
             {
-                // Handle exceptions here
+                
                 Console.WriteLine($"Error saving to JSON file: {ex.Message}");
             }
         }
 
-        
-        public List<Person> LoadAllPersonsFromJSONFile(string jsonFilePath)
+
+        public static List<Person> LoadAllPersonsFromJSONFile()
         {
             List<Person> people = new List<Person>();
             try
@@ -45,8 +45,8 @@ namespace Task2_HierarchicalStructure.Model
             return people;
         }
 
-       
-        public void RemoveAPersonFromJsonFile(Person person, string jsonFilePath)
+
+        public static void RemoveAPersonFromJsonFile(Person person)
         {
 
             List<Person> existingData = JsonConvert.DeserializeObject<List<Person>>(File.ReadAllText(jsonFilePath));

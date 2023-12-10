@@ -21,13 +21,11 @@ namespace Task2_HierarchicalStructure
 
 
             //Instantiate
-            string jsonFilePath = @"..\..\..\Data\JSONFamily.json";
-            PersonModel personModel = PersonModel.GetInstance(jsonFilePath);
-            PersonController personController = new PersonController(personModel);
+            PersonModel personModel = PersonModel.GetInstance();
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            Application.Run(new PersonList(personController, personModel));
+            Application.Run(new PersonList());
         }
     }
 }
