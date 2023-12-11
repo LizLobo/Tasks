@@ -157,7 +157,6 @@ namespace Task2_HierarchicalStructure
             manageRelationshipsForm.SetMainPersonDetails(mainPerson);
             manageRelationshipsForm.PopulateRelatedPersonCombo(mainPerson.Id);
             manageRelationshipsForm.PopulateRelationshipTypesCombo();
-            manageRelationshipsForm.AddRelationshiptoMainPerson(mainPerson);
             manageRelationshipsForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView();
             manageRelationshipsForm.Show();
         }

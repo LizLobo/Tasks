@@ -87,14 +87,6 @@ namespace Task2_HierarchicalStructure.Forms
 
         }
 
-        public void AddRelationshiptoMainPerson(Person mainPerson)
-        {
-           
-            
-
-        }
-
-        //TODO Get mainPerson to pass in from PersonList.
         private void addRelationshipButton_Click(object sender, EventArgs e)
         {
             if (mainPerson != null)

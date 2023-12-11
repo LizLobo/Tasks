@@ -58,5 +58,27 @@ namespace Task2_HierarchicalStructure.Model
             File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(existingData, Formatting.Indented));
         }
 
+        public static void RemoveARelationshipFromPersoninJsonFile(Person person, Relationships relationshipToRemove)
+        {
+            List<Person> existingData = JsonConvert.DeserializeObject<List<Person>>(File.ReadAllText(jsonFilePath));
+
+
+            Person personToUpdate = existingData.FirstOrDefault(p => p.Id == person.Id);
+
+            if (personToUpdate != null)
+            {
+                // Find the specific relationship to remove from the person's relationships list
+                Relationships relationship = personToUpdate.Relationships.FirstOrDefault(r => r.RelatedPersonId == relationshipToRemove.RelatedPersonId);
+
+                if (relationship != null)
+                {
+                    // Remove the relationship from the person's relationships list
+                    personToUpdate.Relationships.Remove(relationship);
+
+                    // Save the updated data back to the JSON file
+                    File.WriteAllText(jsonFilePath, JsonConvert.SerializeObject(existingData, Formatting.Indented));
+                }
+            }
+
     }
 }

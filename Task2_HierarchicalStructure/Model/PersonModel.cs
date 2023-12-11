@@ -56,6 +56,11 @@ namespace Task2_HierarchicalStructure.Model
             JSONFileDatabase.SaveAllPersonsToJsonFile(People);
 
         }
+
+        public void RemoveRelationship(Person relatedPerson)
+        {
+
+        }
        
 
 
