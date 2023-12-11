@@ -1,3 +1,4 @@
+using ReaLTaiizor.Controls;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -9,32 +10,34 @@ namespace Task2_HierarchicalStructure
 {
     public partial class PersonList : Form
     {
-        public PersonController personController = new PersonController();
-        private readonly string jsonFilePath;
+        private  PersonController _personController;
 
         public PersonList()
-        {
+        {  _personController = new PersonController();
             InitializeComponent();
             LoadDataGridView(); 
             DisplayPeopleInDataGridView();
 
         }
 
+        #region Form events
         private void LoadDataGridView()
         {
             personDataGridView.ColumnCount = 3;
             personDataGridView.Columns[0].Name = "ID";
             personDataGridView.Columns[1].Name = "Person";
             personDataGridView.Columns[2].Name = "Relations";
+            personDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 
         }
 
+        #endregion
         public void DisplayPeopleInDataGridView()
         {
             personDataGridView.Rows.Clear();
 
-            foreach (Person person in personController.GetPeopleList())
+            foreach (Person person in _personController.GetPeopleList())
             {
                 
                 string relationshipsInfo = GetRelationshipsInfo(person);
@@ -51,7 +54,7 @@ namespace Task2_HierarchicalStructure
             {
                 if (relationship.RelatedPerson != null && relationship.RelatedPerson.Name != null)
                 {
-                    relationships.Append($"{relationship.Type} with {relationship.RelatedPerson.Name}, ");
+                    relationships.Append($"{relationship.Type} to {relationship.RelatedPerson.Name}, ");
                 }
                 else
                 {
@@ -59,7 +62,7 @@ namespace Task2_HierarchicalStructure
                 }
             }
 
-            // Remove the trailing comma and space if relationships exist
+            
             if (relationships.Length > 0)
             {
                 relationships.Length -= 2;
@@ -73,12 +76,6 @@ namespace Task2_HierarchicalStructure
 
         }
 
-        private void ShowFormPersonInfo()
-        {
-            PersonInfo personInfoForm = new PersonInfo(this);
-            personInfoForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); 
-            personInfoForm.ShowDialog();
-        }
 
         private void personDataGridView_SelectionChanged(object sender, EventArgs e)
         {
@@ -108,14 +105,14 @@ namespace Task2_HierarchicalStructure
 
         private Person GetPersonFromSelectedRow(DataGridViewRow selectedRow)
         {
-            string personId = selectedRow.Cells["ID"].Value.ToString(); ;
+            string personId = selectedRow.Cells["ID"].Value.ToString();
 
-            return personController.GetPeopleList().FirstOrDefault(p => p.Id == personId);
+            return _personController.GetPeopleList().FirstOrDefault(p => p.Id == personId);
         }
 
         private void RemovePerson(Person person)
         {
-            bool removed = personController.RemovePerson(person);
+            bool removed = _personController.RemovePerson(person);
 
             if (removed)
             {
@@ -147,14 +144,42 @@ namespace Task2_HierarchicalStructure
             }
         }
 
+        private void ShowFormPersonInfo()
+        {
+            PersonInfo personInfoForm = new PersonInfo(this);
+            personInfoForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); 
+            personInfoForm.ShowDialog();
+        }
         private void ShowFormManageRelationships(Person mainPerson)
         {
-            ManageRelationships manageRelationshipsForm = new ManageRelationships(this, personController.GetPeopleList());
+            ManageRelationships manageRelationshipsForm = new ManageRelationships(this, _personController.GetPeopleList());
+            manageRelationshipsForm.DisplayRelationshipsInDataGridView(mainPerson);
             manageRelationshipsForm.SetMainPersonDetails(mainPerson);
             manageRelationshipsForm.PopulateRelatedPersonCombo(mainPerson.Id);
             manageRelationshipsForm.PopulateRelationshipTypesCombo();
+            manageRelationshipsForm.AddRelationshiptoMainPerson(mainPerson);
             manageRelationshipsForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView();
             manageRelationshipsForm.Show();
         }
     }
+
+    //public class HelperClass
+    //{
+    //    public void HelpMe(object sender, EventArgs e)
+    //    {
+    //        if (sender is not DataGridView dgv)
+    //            return;
+
+    //        if (dgv.SelectedRows.Count <= 0)
+    //            return;
+
+    //        DataGridViewRow selectedRow = personDataGridView.SelectedRows[0];
+
+    //        Person personToRemove = GetPersonFromSelectedRow(selectedRow);
+
+    //        RemovePerson(personToRemove);
+
+    //        DisplayPeopleInDataGridView();
+    //    }
+    //}
 }

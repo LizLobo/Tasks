@@ -49,20 +49,11 @@ namespace Task2_HierarchicalStructure.Model
 
         public void AddRelationship(Person mainPerson, Person relatedPerson, RelationshipType relationshipType)
         {
-            if (relationshipType == RelationshipType.Parent)
-            {
-                bool isChild = relatedPerson.Relationships.Any(r => r.Type == RelationshipType.Child && r.RelatedPerson == mainPerson);
-
-                if (isChild)
-                {
-                    MessageBox.Show("Cannot add parent relationship if already a child.");
-                }
-            }
 
             Relationships newRelationship = new Relationships(relatedPerson, relationshipType);
 
             mainPerson.AddRelationship(relatedPerson, relationshipType);
-
+            JSONFileDatabase.SaveAllPersonsToJsonFile(People);
 
         }
        

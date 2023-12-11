@@ -14,11 +14,8 @@ namespace Task2_HierarchicalStructure
 {
     public partial class PersonInfo : Form
     {
-        //@LIZ add _ to fields if private
+        
         private readonly PersonController _personController;
-        private readonly string jsonFilePath;
-        PersonModel personModel = PersonModel.GetInstance();
-
         private PersonList personListForm;
 
         public PersonInfo(PersonList personListForm)
@@ -26,11 +23,13 @@ namespace Task2_HierarchicalStructure
             InitializeComponent();
             _personController = new PersonController();
             this.personListForm = personListForm;
+            SetUniqueIDtoPerson();
+        }
 
-            string uniqueId = GenerateUniqueId(); // Generate a unique ID (you might have your own way to generate IDs)
-            idNumberTextbox.Text = uniqueId; // Set the generated ID to the TextBox
-
-            // Disable TextBox editing
+        private void SetUniqueIDtoPerson()
+        {
+            string uniqueId = GenerateUniqueId(); 
+            idNumberTextbox.Text = uniqueId; 
             idNumberTextbox.ReadOnly = true;
         }
 
@@ -56,10 +55,10 @@ namespace Task2_HierarchicalStructure
             string newUniqueId = GenerateUniqueId();
             idNumberTextbox.Text = newUniqueId;
 
-            // Call RefreshDataGridView() on the PersonList instance to update the DataGridView
-            personListForm.DisplayPeopleInDataGridView();
+            
+   
 
-            // Close the current PersonInfo form
+        
             this.Close();
         }
 

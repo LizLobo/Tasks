@@ -18,26 +18,27 @@ namespace Task2_HierarchicalStructure.Controller
 
         public PersonController() 
         {
-           
-            
-           
+                                  
         }
-        public void AddPerson(Person person)
-        {
-           personModel.AddPerson(person);
-        }
-
         public List<Person> GetPeopleList()
         {
             return personModel.People;
         }
 
+        public void AddPerson(Person person)
+        {
+           personModel.AddPerson(person);
+        }
 
         public bool RemovePerson(Person person)
         {
             return personModel.RemovePerson(person);
         }
 
+        public void AddRelationship(Person mainPerson, Person relatedPerson, RelationshipType relationshipType)
+        {
+            personModel.AddRelationship(mainPerson, relatedPerson, relationshipType);
+        }
         
         
         
