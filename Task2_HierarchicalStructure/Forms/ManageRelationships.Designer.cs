@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             label1 = new Label();
@@ -174,6 +174,7 @@
             removeRelationshipButton.Size = new Size(137, 23);
             removeRelationshipButton.TabIndex = 24;
             removeRelationshipButton.Text = "Remove Relationship";
+            removeRelationshipButton.Click += removeRelationshipButton_Click;
             // 
             // addRelationshipButton
             // 
@@ -220,38 +221,38 @@
             // 
             mpRelationshipDataGridView.BackgroundColor = Color.FromArgb(23, 24, 29);
             mpRelationshipDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(23, 24, 29);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            mpRelationshipDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(23, 24, 29);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            mpRelationshipDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             mpRelationshipDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(23, 24, 29);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            mpRelationshipDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(23, 24, 29);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            mpRelationshipDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             mpRelationshipDataGridView.GridColor = SystemColors.ControlDarkDark;
             mpRelationshipDataGridView.Location = new Point(35, 250);
             mpRelationshipDataGridView.Margin = new Padding(2, 1, 2, 1);
             mpRelationshipDataGridView.Name = "mpRelationshipDataGridView";
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(23, 24, 29);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            mpRelationshipDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(23, 24, 29);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            mpRelationshipDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             mpRelationshipDataGridView.RowHeadersWidth = 72;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(23, 24, 29);
-            mpRelationshipDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(23, 24, 29);
+            mpRelationshipDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             mpRelationshipDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);
             mpRelationshipDataGridView.RowTemplate.DefaultCellStyle.ForeColor = SystemColors.Control;
             mpRelationshipDataGridView.RowTemplate.DefaultCellStyle.SelectionBackColor = SystemColors.MenuHighlight;

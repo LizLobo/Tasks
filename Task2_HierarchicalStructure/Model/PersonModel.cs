@@ -50,15 +50,17 @@ namespace Task2_HierarchicalStructure.Model
         public void AddRelationship(Person mainPerson, Person relatedPerson, RelationshipType relationshipType)
         {
 
-            Relationships newRelationship = new Relationships(relatedPerson, relationshipType);
+            Relationship newRelationship = new Relationship(relatedPerson, relationshipType);
 
             mainPerson.AddRelationship(relatedPerson, relationshipType);
             JSONFileDatabase.SaveAllPersonsToJsonFile(People);
 
         }
 
-        public void RemoveRelationship(Person relatedPerson)
+        public void RemoveRelationship(Person mainPerson, Relationship relationToRemove)
         {
+            mainPerson.RemoveRelationship(relationToRemove);
+            JSONFileDatabase.SaveAllPersonsToJsonFile(People);
 
         }
        

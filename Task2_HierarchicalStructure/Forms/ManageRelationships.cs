@@ -20,19 +20,19 @@ namespace Task2_HierarchicalStructure.Forms
         PersonModel personModel = PersonModel.GetInstance();
         private PersonList personListForm;
         public Person mainPerson;
-       
+
 
         private List<Person> allPersons;
 
         public ManageRelationships(PersonList personListForm, List<Person> persons)
         {
             InitializeComponent();
-           
+
             _personController = new PersonController();
             this.personListForm = personListForm;
             allPersons = persons;
             LoadDataGridView();
-            
+
 
 
         }
@@ -45,12 +45,12 @@ namespace Task2_HierarchicalStructure.Forms
 
         }
 
-        public void DisplayRelationshipsInDataGridView (Person mainPerson)
+        public void DisplayRelationshipsInDataGridView(Person mainPerson)
         {
             this.mainPerson = mainPerson;
             mpRelationshipDataGridView.Rows.Clear();
 
-            foreach (Relationships relationship in mainPerson.Relationships)
+            foreach (Relationship relationship in mainPerson.Relationships)
             {
                 if (relationship.RelatedPerson != null && relationship.RelatedPerson.Name != null)
                 {
@@ -62,7 +62,6 @@ namespace Task2_HierarchicalStructure.Forms
         }
         public void SetMainPersonDetails(Person mainPerson)
         {
-            
 
             mainPersonTextbox.Text = $"{mainPerson.Name} {mainPerson.Surname}";
 
@@ -71,16 +70,16 @@ namespace Task2_HierarchicalStructure.Forms
 
 
 
-        public void PopulateRelationshipTypesCombo() 
+        public void PopulateRelationshipTypesCombo()
         {
             relationshipTypeComboBox.DataSource = Enum.GetValues(typeof(RelationshipType));
         }
 
-             
-        public void PopulateRelatedPersonCombo(string mainPersonId) 
+
+        public void PopulateRelatedPersonCombo(string mainPersonId)
         {
             var relatedPersons = allPersons.Where(p => p.Id != mainPersonId).ToList();
-                      
+
             cbxNames.DataSource = relatedPersons;
             cbxNames.DisplayMember = "Name";
             cbxNames.ValueMember = "Id";
@@ -93,17 +92,50 @@ namespace Task2_HierarchicalStructure.Forms
             {
                 if (relationshipTypeComboBox.SelectedItem is RelationshipType selectedRelationship &&
             cbxNames.SelectedItem is Person relatedPerson)
-              {
-                  _personController.AddRelationship(mainPerson, relatedPerson, selectedRelationship);
-              }
+                {
+                    _personController.AddRelationship(mainPerson, relatedPerson, selectedRelationship);
+                }
             }
-            
+
         }
+
 
         private void cancelRelationshipButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void removeRelationshipButton_Click(object sender, EventArgs e)
+        {
+            if (mpRelationshipDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = mpRelationshipDataGridView.SelectedRows[0];
+
+                Relationship relationToRemove = GetRelationFromSelectedRow(selectedRow);
+
+                _personController.RemoveRelationship(mainPerson, relationToRemove);
+
+                DisplayRelationshipsInDataGridView(mainPerson);
+
+            }   
+        }
+
+        private Relationship GetRelationFromSelectedRow(DataGridViewRow selectedRow)
+        {
+            if (selectedRow != null && selectedRow.Cells.Count >= 2)
+            {
+                // Assuming the cells' values in the DataGridView are strings or convertible to the desired types
+                Person relatedPerson = selectedRow.Cells["RelatedPerson"].Value as Person;
+                RelationshipType selectedRelationship;
+
+                if (Enum.TryParse(selectedRow.Cells["RelationshipType"].Value?.ToString(), out selectedRelationship))
+                {
+                    return new Relationship(relatedPerson, selectedRelationship); // Assuming a constructor for Relationship
+                }
+            }
+
+            return null; // Return null if the information cannot be retrieved
         }
     }
 }

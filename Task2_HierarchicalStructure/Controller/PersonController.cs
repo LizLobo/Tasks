@@ -37,7 +37,12 @@ namespace Task2_HierarchicalStructure.Controller
 
         public void AddRelationship(Person mainPerson, Person relatedPerson, RelationshipType relationshipType)
         {
-            personModel.AddRelationship(mainPerson, relatedPerson, relationshipType);
+             personModel.AddRelationship(mainPerson, relatedPerson, relationshipType);
+        }
+
+        public void RemoveRelationship(Person mainPerson, Relationship relationToRemove) 
+        {
+            personModel.RemoveRelationship(mainPerson, relationToRemove);
         }
         
         

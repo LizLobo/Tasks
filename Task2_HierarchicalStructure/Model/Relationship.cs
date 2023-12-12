@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Task2_HierarchicalStructure.Model
 {
-    public class Relationships
+    public class Relationship
     {
         public Person RelatedPerson { get; set; }
    
         public RelationshipType Type { get; }
 
-    public Relationships( Person relatedPerson, RelationshipType type)
+    public Relationship( Person relatedPerson, RelationshipType type)
     {
         RelatedPerson = relatedPerson;
         Type = type;

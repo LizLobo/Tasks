@@ -50,7 +50,7 @@ namespace Task2_HierarchicalStructure
         {
             StringBuilder relationships = new StringBuilder();
 
-            foreach (Relationships relationship in person.Relationships)
+            foreach (Relationship relationship in person.Relationships)
             {
                 if (relationship.RelatedPerson != null && relationship.RelatedPerson.Name != null)
                 {
