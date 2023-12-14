@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             label1 = new Label();
@@ -45,7 +45,6 @@
             addRelationshipButton = new ReaLTaiizor.Controls.CrownButton();
             mainPersonTextbox = new ReaLTaiizor.Controls.CrownTextBox();
             cbxNames = new ComboBox();
-            crownButton1 = new ReaLTaiizor.Controls.CrownButton();
             mpRelationshipDataGridView = new DataGridView();
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             panel1.SuspendLayout();
@@ -156,7 +155,7 @@
             // 
             // cancelRelationshipButton
             // 
-            cancelRelationshipButton.Location = new Point(506, 49);
+            cancelRelationshipButton.Location = new Point(463, 49);
             cancelRelationshipButton.Margin = new Padding(2, 1, 2, 1);
             cancelRelationshipButton.Name = "cancelRelationshipButton";
             cancelRelationshipButton.Padding = new Padding(3, 2, 3, 2);
@@ -167,7 +166,7 @@
             // 
             // removeRelationshipButton
             // 
-            removeRelationshipButton.Location = new Point(192, 49);
+            removeRelationshipButton.Location = new Point(273, 49);
             removeRelationshipButton.Margin = new Padding(2, 1, 2, 1);
             removeRelationshipButton.Name = "removeRelationshipButton";
             removeRelationshipButton.Padding = new Padding(3, 2, 3, 2);
@@ -178,7 +177,7 @@
             // 
             // addRelationshipButton
             // 
-            addRelationshipButton.Location = new Point(35, 49);
+            addRelationshipButton.Location = new Point(83, 49);
             addRelationshipButton.Margin = new Padding(2, 1, 2, 1);
             addRelationshipButton.Name = "addRelationshipButton";
             addRelationshipButton.Padding = new Padding(3, 2, 3, 2);
@@ -207,52 +206,42 @@
             cbxNames.Size = new Size(171, 23);
             cbxNames.TabIndex = 28;
             // 
-            // crownButton1
-            // 
-            crownButton1.Location = new Point(349, 49);
-            crownButton1.Margin = new Padding(2, 1, 2, 1);
-            crownButton1.Name = "crownButton1";
-            crownButton1.Padding = new Padding(3, 2, 3, 2);
-            crownButton1.Size = new Size(137, 23);
-            crownButton1.TabIndex = 29;
-            crownButton1.Text = "Edit Relationship";
-            // 
             // mpRelationshipDataGridView
             // 
             mpRelationshipDataGridView.BackgroundColor = Color.FromArgb(23, 24, 29);
             mpRelationshipDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(23, 24, 29);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            mpRelationshipDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(23, 24, 29);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            mpRelationshipDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             mpRelationshipDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(23, 24, 29);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            mpRelationshipDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(23, 24, 29);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            mpRelationshipDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             mpRelationshipDataGridView.GridColor = SystemColors.ControlDarkDark;
             mpRelationshipDataGridView.Location = new Point(35, 250);
             mpRelationshipDataGridView.Margin = new Padding(2, 1, 2, 1);
             mpRelationshipDataGridView.Name = "mpRelationshipDataGridView";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(23, 24, 29);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            mpRelationshipDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(23, 24, 29);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            mpRelationshipDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             mpRelationshipDataGridView.RowHeadersWidth = 72;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(23, 24, 29);
-            mpRelationshipDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(23, 24, 29);
+            mpRelationshipDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             mpRelationshipDataGridView.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);
             mpRelationshipDataGridView.RowTemplate.DefaultCellStyle.ForeColor = SystemColors.Control;
             mpRelationshipDataGridView.RowTemplate.DefaultCellStyle.SelectionBackColor = SystemColors.MenuHighlight;
@@ -260,6 +249,7 @@
             mpRelationshipDataGridView.RowTemplate.Height = 37;
             mpRelationshipDataGridView.Size = new Size(620, 161);
             mpRelationshipDataGridView.TabIndex = 30;
+            mpRelationshipDataGridView.SelectionChanged += mpRelationshipDataGridView_SelectionChanged_1;
             // 
             // crownLabel1
             // 
@@ -280,7 +270,6 @@
             ClientSize = new Size(686, 444);
             Controls.Add(crownLabel1);
             Controls.Add(mpRelationshipDataGridView);
-            Controls.Add(crownButton1);
             Controls.Add(cbxNames);
             Controls.Add(mainPersonTextbox);
             Controls.Add(cancelRelationshipButton);
@@ -319,7 +308,6 @@
         private ReaLTaiizor.Controls.CrownButton addRelationshipButton;
         private ReaLTaiizor.Controls.CrownTextBox mainPersonTextbox;
         private ComboBox cbxNames;
-        private ReaLTaiizor.Controls.CrownButton crownButton1;
         private DataGridView mpRelationshipDataGridView;
         private ReaLTaiizor.Controls.CrownLabel crownLabel1;
     }

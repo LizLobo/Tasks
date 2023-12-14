@@ -39,9 +39,11 @@ namespace Task2_HierarchicalStructure.Forms
 
         private void LoadDataGridView()
         {
-            mpRelationshipDataGridView.ColumnCount = 2;
+            mpRelationshipDataGridView.ColumnCount = 3;
             mpRelationshipDataGridView.Columns[0].Name = "RelationshipType";
-            mpRelationshipDataGridView.Columns[1].Name = "RelatedPerson";
+            mpRelationshipDataGridView.Columns[1].Name = "RelatedPersonName";
+            mpRelationshipDataGridView.Columns[2].Name = "RelatedPerson";
+            mpRelationshipDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
         }
 
@@ -52,10 +54,10 @@ namespace Task2_HierarchicalStructure.Forms
 
             foreach (Relationship relationship in mainPerson.Relationships)
             {
-                if (relationship.RelatedPerson != null && relationship.RelatedPerson.Name != null)
+                if (relationship.RelatedPerson != null && relationship.RelatedPerson != null)
                 {
                     mpRelationshipDataGridView.Rows.Add(
-                        relationship.Type, relationship.RelatedPerson.Name);
+                        relationship.Type, relationship.RelatedPerson.Name, relationship.RelatedPerson);
                 }
 
             }
@@ -91,12 +93,22 @@ namespace Task2_HierarchicalStructure.Forms
             if (mainPerson != null)
             {
                 if (relationshipTypeComboBox.SelectedItem is RelationshipType selectedRelationship &&
-            cbxNames.SelectedItem is Person relatedPerson)
+                    cbxNames.SelectedItem is Person relatedPerson)
                 {
-                    _personController.AddRelationship(mainPerson, relatedPerson, selectedRelationship);
+                    bool relationshipExists = mainPerson.Relationships.Any(r =>
+                        r.Type == selectedRelationship && r.RelatedPerson == relatedPerson);
+
+                    if (relationshipExists)
+                    {
+                        MessageBox.Show("Relationship already exists!");
+                        return;
+                    }
+
+                    Relationship newRelationship = new Relationship(relatedPerson, selectedRelationship);
+                    _personController.AddRelationship(mainPerson, newRelationship);
                 }
             }
-
+            DisplayRelationshipsInDataGridView(mainPerson);
         }
 
 
@@ -105,6 +117,19 @@ namespace Task2_HierarchicalStructure.Forms
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void mpRelationshipDataGridView_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (mpRelationshipDataGridView.SelectedRows.Count == 1)
+            {
+                removeRelationshipButton.Enabled = true;
+            }
+            else
+            {
+                removeRelationshipButton.Enabled = false;
+            }
+        }
+       
 
         private void removeRelationshipButton_Click(object sender, EventArgs e)
         {
@@ -118,24 +143,25 @@ namespace Task2_HierarchicalStructure.Forms
 
                 DisplayRelationshipsInDataGridView(mainPerson);
 
-            }   
+            }
         }
 
         private Relationship GetRelationFromSelectedRow(DataGridViewRow selectedRow)
         {
             if (selectedRow != null && selectedRow.Cells.Count >= 2)
             {
-                // Assuming the cells' values in the DataGridView are strings or convertible to the desired types
-                Person relatedPerson = selectedRow.Cells["RelatedPerson"].Value as Person;
+                
+                Person relatedPersonId = selectedRow.Cells["RelatedPerson"].Value as Person;
                 RelationshipType selectedRelationship;
 
                 if (Enum.TryParse(selectedRow.Cells["RelationshipType"].Value?.ToString(), out selectedRelationship))
                 {
-                    return new Relationship(relatedPerson, selectedRelationship); // Assuming a constructor for Relationship
+                    return new Relationship(relatedPersonId, selectedRelationship);
                 }
             }
 
-            return null; // Return null if the information cannot be retrieved
+            return null;
         }
+
     }
 }

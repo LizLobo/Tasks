@@ -1,18 +1,18 @@
 [
   {
-    "Id": "71d97792-9bb4-40fd-8e70-8303b1853c5b",
-    "Name": "Henry",
-    "Surname": "Harris",
-    "Age": 35,
+    "Id": "1b20eb9d-fea4-4d74-a366-49c8d13198d2",
+    "Name": "Barry",
+    "Surname": "Barrista",
+    "Age": 25,
     "Sex": "Male",
     "Gender": "Male",
     "IsDeceased": false,
     "Relationships": [
       {
         "RelatedPerson": {
-          "Id": "e3c18758-9bd2-4f74-a294-7d27e1e57c79",
-          "Name": "Brand",
-          "Surname": "Branding",
+          "Id": "73d6ccf0-2ed3-4b05-91f5-e51b981ce46c",
+          "Name": "Combi",
+          "Surname": "Combination",
           "Age": 25,
           "Sex": "Male",
           "Gender": "Male",
@@ -23,10 +23,10 @@
       },
       {
         "RelatedPerson": {
-          "Id": "e3c18758-9bd2-4f74-a294-7d27e1e57c79",
-          "Name": "Brand",
-          "Surname": "Branding",
-          "Age": 25,
+          "Id": "7354b82c-12bb-4725-8416-1c6ef5a6ec7f",
+          "Name": "Danny",
+          "Surname": "Daniels",
+          "Age": 54,
           "Sex": "Male",
           "Gender": "Male",
           "IsDeceased": false,
@@ -37,125 +37,30 @@
     ]
   },
   {
-    "Id": "055bea8e-3258-4314-9892-c35d3b000a07",
-    "Name": "Mike",
-    "Surname": "Michaels",
-    "Age": 32,
-    "Sex": "Male",
-    "Gender": "Male",
-    "IsDeceased": false,
-    "Relationships": [
-      {
-        "RelatedPerson": {
-          "Id": "2d134630-e919-42ce-a5de-86331299dcfd",
-          "Name": "Andy",
-          "Surname": "Madeit",
-          "Age": 36,
-          "Sex": "Male",
-          "Gender": "Male",
-          "IsDeceased": false,
-          "Relationships": []
-        },
-        "Type": 1
-      }
-    ]
-  },
-  {
-    "Id": "b786944d-bd96-41e9-9783-fd42f65b4ec2",
-    "Name": "Liz",
-    "Surname": "Lobo",
-    "Age": 31,
-    "Sex": "Female",
-    "Gender": "Female",
-    "IsDeceased": false,
-    "Relationships": []
-  },
-  {
-    "Id": "e3c18758-9bd2-4f74-a294-7d27e1e57c79",
-    "Name": "Brand",
-    "Surname": "Branding",
+    "Id": "73d6ccf0-2ed3-4b05-91f5-e51b981ce46c",
+    "Name": "Combi",
+    "Surname": "Combination",
     "Age": 25,
     "Sex": "Male",
     "Gender": "Male",
     "IsDeceased": false,
-    "Relationships": [
-      {
-        "RelatedPerson": {
-          "Id": "71d97792-9bb4-40fd-8e70-8303b1853c5b",
-          "Name": "Henry",
-          "Surname": "Harris",
-          "Age": 35,
-          "Sex": "Male",
-          "Gender": "Male",
-          "IsDeceased": false,
-          "Relationships": [
-            {
-              "RelatedPerson": {
-                "Id": "e3c18758-9bd2-4f74-a294-7d27e1e57c79",
-                "Name": "Brand",
-                "Surname": "Branding",
-                "Age": 25,
-                "Sex": "Male",
-                "Gender": "Male",
-                "IsDeceased": false,
-                "Relationships": []
-              },
-              "Type": 0
-            },
-            {
-              "RelatedPerson": {
-                "Id": "e3c18758-9bd2-4f74-a294-7d27e1e57c79",
-                "Name": "Brand",
-                "Surname": "Branding",
-                "Age": 25,
-                "Sex": "Male",
-                "Gender": "Male",
-                "IsDeceased": false,
-                "Relationships": []
-              },
-              "Type": 0
-            }
-          ]
-        },
-        "Type": 0
-      }
-    ]
+    "Relationships": []
   },
   {
-    "Id": "2d134630-e919-42ce-a5de-86331299dcfd",
-    "Name": "Andy",
-    "Surname": "Madeit",
-    "Age": 36,
+    "Id": "7354b82c-12bb-4725-8416-1c6ef5a6ec7f",
+    "Name": "Danny",
+    "Surname": "Daniels",
+    "Age": 54,
     "Sex": "Male",
     "Gender": "Male",
     "IsDeceased": false,
     "Relationships": []
   },
   {
-    "Id": "f8004275-cb48-4349-890a-798d9f87f577",
-    "Name": "Sam",
-    "Surname": "Sammity",
-    "Age": 40,
-    "Sex": "Male",
-    "Gender": "Male",
-    "IsDeceased": false,
-    "Relationships": []
-  },
-  {
-    "Id": "4893831c-cd45-4aaa-bc81-e3b1c50f1155",
-    "Name": "Lola",
-    "Surname": "Lolz",
-    "Age": 36,
-    "Sex": "Female",
-    "Gender": "Female",
-    "IsDeceased": false,
-    "Relationships": []
-  },
-  {
-    "Id": "72b33a7e-276e-46fb-8205-74276f757c17",
-    "Name": "Henry",
-    "Surname": "Biever",
-    "Age": 4,
+    "Id": "908a8d23-6dc0-4d2b-919e-f789a4fb9682",
+    "Name": "Alex",
+    "Surname": "Alexista",
+    "Age": 25,
     "Sex": "Male",
     "Gender": "Female",
     "IsDeceased": false,

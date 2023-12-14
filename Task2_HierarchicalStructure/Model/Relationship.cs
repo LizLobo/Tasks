@@ -17,17 +17,29 @@ namespace Task2_HierarchicalStructure.Model
         RelatedPerson = relatedPerson;
         Type = type;
     }
-
        
     }
 
 
     public enum RelationshipType
     {
-        Parent,
+        Parent, //neutral
         Child,
         Sibling,
-        Partner
+        Partner, //neutral
+        Father, //Male
+        Son,
+        Brother,
+        Boyfriend,
+        Husband, //Male
+        Mother, //Female
+        Daughter,
+        Sister,
+        Girlfriend,
+        Wife //Female
+
+
         
     }
+
 }

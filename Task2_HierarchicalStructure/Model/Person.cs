@@ -12,7 +12,7 @@ namespace Task2_HierarchicalStructure.Model
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public string Surname { get; set; }
+        public string Surname {  get; set; }
 
         public int Age { get; set; }
         public string Sex { get; set; }
@@ -20,11 +20,13 @@ namespace Task2_HierarchicalStructure.Model
         public bool IsDeceased { get; set; }
 
 
+       // public List<BChildren>? BiologicalChildren {  get; set; }
+       // public List<Pets>? Pets { get; set; }
         public List<Relationship>? Relationships { get; private set; }
 
 
-        public Person(string id, string name, string surname, int age, string sex, string gender, bool isDeceased)
-        {
+    public Person(string id, string name, string surname, int age, string sex, string gender, bool isDeceased)
+    {
             Id = id;
             Name = name;
             Surname = surname;
@@ -33,24 +35,28 @@ namespace Task2_HierarchicalStructure.Model
             Gender = gender;
             IsDeceased = isDeceased;
             Relationships = new List<Relationship>();
-        }
+    }
 
-        //@LIZ this needs to move to model
-        public void AddRelationship(Person relatedPerson, RelationshipType relationshipType)
+        //@LIZ does this need to move to model?
+        public void AddRelationship(Relationship newRelationship)
         {
-            Relationships.Add(new Relationship(relatedPerson, relationshipType));
+            
+            var relatedPerson = newRelationship.RelatedPerson;
+            var relationshipType = newRelationship.Type;
+
+                Relationships.Add(new Relationship(relatedPerson, relationshipType));
         }
 
         public void RemoveRelationship(Relationship relationshipToRemove)
         {
             if (relationshipToRemove != null)
             {
-                // Extracting information from the provided relationship object
-                Person relatedPerson = relationshipToRemove.RelatedPerson;
+                
+                string relatedPersonID = relationshipToRemove.RelatedPerson.Id;
                 RelationshipType relationshipType = relationshipToRemove.Type;
 
-                // Finding the relationship to remove in the list based on the extracted information
-                Relationship relationshipInList = Relationships.FirstOrDefault(r => r.RelatedPerson == relatedPerson && r.Type == relationshipType);
+              
+                Relationship relationshipInList = Relationships.FirstOrDefault(r => r.RelatedPerson.Id == relatedPersonID && r.Type == relationshipType);
 
                 if (relationshipInList != null)
                 {
@@ -59,11 +65,10 @@ namespace Task2_HierarchicalStructure.Model
             }
 
 
-        }
-
-
-
-
-
     }
-}
+
+
+
+   
+
+}}

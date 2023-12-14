@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Task2_HierarchicalStructure.Controller;
 using Task2_HierarchicalStructure.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Task2_HierarchicalStructure
 {
@@ -17,13 +19,26 @@ namespace Task2_HierarchicalStructure
         
         private readonly PersonController _personController;
         private PersonList personListForm;
+        private Person _selectedPerson;
 
-        public PersonInfo(PersonList personListForm)
+        public PersonInfo(PersonList personListForm, Person selectedPerson = null)
         {
             InitializeComponent();
             _personController = new PersonController();
             this.personListForm = personListForm;
             SetUniqueIDtoPerson();
+            _selectedPerson = selectedPerson;
+
+            if (_selectedPerson != null ) 
+            {
+                UpdatePersonDetails(_selectedPerson);
+
+            }
+            else
+            {
+                SetUniqueIDtoPerson();
+            }
+
         }
 
         private void SetUniqueIDtoPerson()
@@ -41,6 +56,32 @@ namespace Task2_HierarchicalStructure
 
         private void addPersonSaveButton_Click(object sender, EventArgs e)
         {
+            if (_selectedPerson == null)
+            {
+                // Adding a new person
+                _personController.AddPerson(PersonWithInfo());
+                string newUniqueId = GenerateUniqueId();
+                idNumberTextbox.Text = newUniqueId;
+            }
+            else
+            {
+                // Updating an existing person
+                UpdatePersonDetails(_selectedPerson);
+            }
+
+            this.Close();
+            
+
+
+        }
+
+        private string GenerateUniqueId()
+        {
+            return Guid.NewGuid().ToString();
+        }
+
+        private Person PersonWithInfo()
+        {
             string id = idNumberTextbox.Text;
             string name = nameTextbox.Text;
             string surname = surnameTextbox.Text;
@@ -49,24 +90,24 @@ namespace Task2_HierarchicalStructure
             string gender = genderComboBox.SelectedItem?.ToString();
             bool isDeceased = relationshipCheckBox.Checked;
 
-            Person person = new Person(id, name, surname, age, sex, gender, isDeceased);
-            _personController.AddPerson(person);
-
-            string newUniqueId = GenerateUniqueId();
-            idNumberTextbox.Text = newUniqueId;
-
             
-   
+            Person person = new Person(id, name, surname, age, sex, gender, isDeceased);
 
-        
-            this.Close();
+            return person;
         }
 
-        private string GenerateUniqueId()
+        public void UpdatePersonDetails(Person selectedPerson)
         {
-            return Guid.NewGuid().ToString();
-        }
 
+
+            idNumberTextbox.Text = selectedPerson.Id;
+            nameTextbox.Text = selectedPerson.Name;
+            surnameTextbox.Text = selectedPerson.Surname;
+            ageNumeric.Value = selectedPerson.Age; 
+            sexComboBox.SelectedItem = selectedPerson.Sex; 
+            genderComboBox.SelectedItem = selectedPerson.Gender;
+            relationshipCheckBox.Checked = selectedPerson.IsDeceased;
+        }
 
     }
 }

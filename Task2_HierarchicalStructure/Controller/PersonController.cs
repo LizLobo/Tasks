@@ -35,9 +35,9 @@ namespace Task2_HierarchicalStructure.Controller
             return personModel.RemovePerson(person);
         }
 
-        public void AddRelationship(Person mainPerson, Person relatedPerson, RelationshipType relationshipType)
+        public void AddRelationship(Person mainPerson, Relationship newRelationship)
         {
-             personModel.AddRelationship(mainPerson, relatedPerson, relationshipType);
+             personModel.AddRelationship(mainPerson, newRelationship);
         }
 
         public void RemoveRelationship(Person mainPerson, Relationship relationToRemove) 
@@ -45,6 +45,7 @@ namespace Task2_HierarchicalStructure.Controller
             personModel.RemoveRelationship(mainPerson, relationToRemove);
         }
         
+        //Display relationship with derived name:
         
         
 

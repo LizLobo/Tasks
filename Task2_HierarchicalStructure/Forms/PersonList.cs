@@ -10,12 +10,13 @@ namespace Task2_HierarchicalStructure
 {
     public partial class PersonList : Form
     {
-        private  PersonController _personController;
+        private PersonController _personController;
 
         public PersonList()
-        {  _personController = new PersonController();
+        {
+            _personController = new PersonController();
             InitializeComponent();
-            LoadDataGridView(); 
+            LoadDataGridView();
             DisplayPeopleInDataGridView();
 
         }
@@ -39,7 +40,7 @@ namespace Task2_HierarchicalStructure
 
             foreach (Person person in _personController.GetPeopleList())
             {
-                
+
                 string relationshipsInfo = GetRelationshipsInfo(person);
 
                 personDataGridView.Rows.Add(person.Id, person.Name + " " + person.Surname, relationshipsInfo);
@@ -62,7 +63,7 @@ namespace Task2_HierarchicalStructure
                 }
             }
 
-            
+
             if (relationships.Length > 0)
             {
                 relationships.Length -= 2;
@@ -79,19 +80,21 @@ namespace Task2_HierarchicalStructure
 
         private void personDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (personDataGridView.SelectedRows.Count > 0)
+            if (personDataGridView.SelectedRows.Count == 1)
             {
                 removePersonButton.Enabled = true;
+                manageRelationshipsButton.Enabled = true;
             }
             else
             {
                 removePersonButton.Enabled = false;
+                manageRelationshipsButton.Enabled = false;
             }
         }
 
         private void removePersonButton_Click(object sender, EventArgs e)
         {
-            if (personDataGridView.SelectedRows.Count > 0)
+            if (personDataGridView.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = personDataGridView.SelectedRows[0];
 
@@ -126,7 +129,7 @@ namespace Task2_HierarchicalStructure
 
         private void manageRelationshipsButton_Click(object sender, EventArgs e)
         {
-            if (personDataGridView.SelectedRows.Count > 0)
+            if (personDataGridView.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = personDataGridView.SelectedRows[0];
 
@@ -147,7 +150,7 @@ namespace Task2_HierarchicalStructure
         private void ShowFormPersonInfo()
         {
             PersonInfo personInfoForm = new PersonInfo(this);
-            personInfoForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView(); 
+            personInfoForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView();
             personInfoForm.ShowDialog();
         }
         private void ShowFormManageRelationships(Person mainPerson)
@@ -159,6 +162,37 @@ namespace Task2_HierarchicalStructure
             manageRelationshipsForm.PopulateRelationshipTypesCombo();
             manageRelationshipsForm.FormClosed += (s, ev) => DisplayPeopleInDataGridView();
             manageRelationshipsForm.Show();
+        }
+
+        private void editPersonButton_Click(object sender, EventArgs e)
+        {
+            if (personDataGridView.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = personDataGridView.SelectedRows[0];
+                Person selectedPerson = GetPersonFromSelectedRow(selectedRow);
+                OpenEditPersonForm(selectedPerson);
+            }
+
+        }
+
+        private void OpenEditPersonForm(Person selectedPerson)
+        {
+            PersonInfo personInfoForm = new PersonInfo(this, selectedPerson);
+            personInfoForm.FormClosed += (s, ev) =>
+            {
+                if (personInfoForm.DialogResult == DialogResult.OK) // Assuming DialogResult.OK on successful save
+                {
+                    // Update the selected person in the list after changes in PersonInfo form
+                    var peopleList = _personController.GetPeopleList();
+                    int index = peopleList.FindIndex(p => p.Id == selectedPerson.Id); // Assuming Person has an ID property
+                    if (index != -1)
+                    {
+                        peopleList[index] = selectedPerson; // Update the person in the list
+                        DisplayPeopleInDataGridView(); // Refresh the DataGridView
+                    }
+                }
+            };
+            personInfoForm.ShowDialog();
         }
     }
 

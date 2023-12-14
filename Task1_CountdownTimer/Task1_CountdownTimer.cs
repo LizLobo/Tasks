@@ -4,10 +4,6 @@ namespace Task1_CountdownTimer
 {
     public partial class Task1_CountdownTimer : Form
     {
-        private int _nStartTime;
-        private int _nStepValue;
-        private bool _isCounting = false;
-        private bool _isPaused = false;
         private CancellationTokenSource _cancellationTokenSource;
 
 
@@ -20,6 +16,8 @@ namespace Task1_CountdownTimer
         }
 
 
+        private int _nStartTime;
+        private bool _isCounting = false;
 
         private void StartCounterButton_Click(object sender, EventArgs e)
         {
@@ -53,6 +51,8 @@ namespace Task1_CountdownTimer
                 methodSwitch.Enabled = false;
             }
         }
+        private int _nStepValue;
+       
         public async void CountDownAsync()
         {
             _isCounting = true;
@@ -67,22 +67,18 @@ namespace Task1_CountdownTimer
                     break;
                 }
 
-                if (!_isPaused)
-                {
-                    int delay = Math.Min(_nStartTime, _nStepValue);
-                    _nStartTime -= delay;
+               
+                
+               int delay = Math.Min(_nStartTime, _nStepValue);
+               await Task.Delay(delay * 1000);
+               _nStartTime -= delay;
 
-                    await Task.Delay(delay * 1000);
-                    counterDisplay.Text = _nStartTime.ToString();
-                }
-                else
-                {
-                    await Task.Delay(100); // Small delay while paused
-                }
+               counterDisplay.Text = _nStartTime.ToString();
+                
+                
             }
 
             _isCounting = false;
-            _isPaused = false;
             methodSwitch.Enabled = true;
             _nStartTime = 0;
             _nStepValue = 0;
@@ -103,21 +99,6 @@ namespace Task1_CountdownTimer
         }
 
 
-        private void methodSwitch_SwitchedChanged(object sender)
-        {
-
-            if (methodSwitch.Switched)
-            {
-                asyncLabel.ForeColor = Color.FromArgb(128, 255, 128);
-                timerLabel.ForeColor = Color.FromArgb(29, 200, 238);
-            }
-            else
-            {
-                timerLabel.ForeColor = Color.FromArgb(128, 255, 128);
-                asyncLabel.ForeColor = Color.FromArgb(29, 200, 238);
-            }
-
-        }
 
         private void countdownTimer_Tick(object sender, EventArgs e)
         {
@@ -142,24 +123,37 @@ namespace Task1_CountdownTimer
                 return;
             }
 
-            if (!_isPaused)
-            {
-                if (_nStartTime % _nStepValue != 0)
-                {
+            
+            
+                
                     int delay = Math.Min(_nStartTime, _nStepValue);
+                    countdownTimer.Interval = delay * 1000;
                     _nStartTime -= delay;
                     counterDisplay.Text = _nStartTime.ToString();
 
-                    // Adjust the timer's interval to simulate a delay in milliseconds
-                    countdownTimer.Interval = delay * 1000;
+                    
                     return;
-                }
-            }
+                
             
-                _nStartTime -= _nStepValue;
-                counterDisplay.Text = _nStartTime.ToString();
+            
+                
         }
 
+        private void methodSwitch_SwitchedChanged(object sender)
+        {
+
+            if (methodSwitch.Switched)
+            {
+                asyncLabel.ForeColor = Color.FromArgb(128, 255, 128);
+                timerLabel.ForeColor = Color.FromArgb(29, 200, 238);
+            }
+            else
+            {
+                timerLabel.ForeColor = Color.FromArgb(128, 255, 128);
+                asyncLabel.ForeColor = Color.FromArgb(29, 200, 238);
+            }
+
+        }
         public void durationNum_ValueChanged(object sender, EventArgs e)
         {
             _nStartTime = Convert.ToInt32(durationNum.Value);
@@ -170,10 +164,9 @@ namespace Task1_CountdownTimer
                 if (methodSwitch.Switched)
                 {
                     countdownTimer.Stop();
-                    if (!_isPaused)
-                    {
-                        _cancellationTokenSource?.Cancel();
-                    }
+                                       
+                    _cancellationTokenSource?.Cancel();
+                    
                     counterDisplay.Text = _nStartTime.ToString();
                     CountDownAsync();
                 }
@@ -236,13 +229,13 @@ namespace Task1_CountdownTimer
             {
                 _cancellationTokenSource?.Cancel();
                 _isCounting = false;
-                _isPaused = false;
+                
 
-                // Reset start number and step number to their default values
+                
                 _nStartTime = 0; 
                 _nStepValue = 0; 
 
-                // Update the counter display with the default start number
+               
                 counterDisplay.Text = _nStartTime.ToString();
                 stepNum.Value = _nStepValue;
                 durationNum.Value = _nStartTime;
@@ -252,12 +245,7 @@ namespace Task1_CountdownTimer
 
         private void PauseButton_Click(object sender, EventArgs e)
         {
-            if (_isCounting)
-            {
-                _isPaused = !_isPaused;
-                // Change the text of the pause button based on the pause state
-                PauseButton.Text = _isPaused ? "Resume" : "Pause";
-            }
+           
         }
     }
 }

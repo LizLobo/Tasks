@@ -47,12 +47,10 @@ namespace Task2_HierarchicalStructure.Model
 
         }
 
-        public void AddRelationship(Person mainPerson, Person relatedPerson, RelationshipType relationshipType)
+        public void AddRelationship(Person mainPerson, Relationship newRelationship)
         {
 
-            Relationship newRelationship = new Relationship(relatedPerson, relationshipType);
-
-            mainPerson.AddRelationship(relatedPerson, relationshipType);
+            mainPerson.AddRelationship(newRelationship);
             JSONFileDatabase.SaveAllPersonsToJsonFile(People);
 
         }

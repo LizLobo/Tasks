@@ -57,10 +57,11 @@
             counterDisplay.BaseBackColor = Color.FromArgb(43, 48, 67);
             counterDisplay.ColorBordersOnEnter = true;
             counterDisplay.DisableBorderColor = Color.FromArgb(60, 63, 80);
-            counterDisplay.Font = new Font("Unispace", 21.8571415F, FontStyle.Bold, GraphicsUnit.Point);
+            counterDisplay.Font = new Font("Microsoft Sans Serif", 21.8571415F, FontStyle.Bold, GraphicsUnit.Point);
             counterDisplay.ForeColor = Color.FromArgb(127, 131, 140);
             counterDisplay.Image = null;
-            counterDisplay.Location = new Point(182, 70);
+            counterDisplay.Location = new Point(106, 35);
+            counterDisplay.Margin = new Padding(2);
             counterDisplay.MaxLength = 32767;
             counterDisplay.Multiline = false;
             counterDisplay.Name = "counterDisplay";
@@ -68,7 +69,7 @@
             counterDisplay.ShortcutsEnabled = true;
             counterDisplay.ShowBottomBorder = true;
             counterDisplay.ShowTopBorder = true;
-            counterDisplay.Size = new Size(577, 94);
+            counterDisplay.Size = new Size(337, 65);
             counterDisplay.TabIndex = 0;
             counterDisplay.TextAlignment = HorizontalAlignment.Center;
             counterDisplay.UseSystemPasswordChar = false;
@@ -78,44 +79,48 @@
             // skyLabel1
             // 
             skyLabel1.AutoSize = true;
-            skyLabel1.Font = new Font("Unispace", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
+            skyLabel1.Font = new Font("Microsoft Sans Serif", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
             skyLabel1.ForeColor = Color.Silver;
-            skyLabel1.Location = new Point(182, 213);
+            skyLabel1.Location = new Point(106, 106);
+            skyLabel1.Margin = new Padding(2, 0, 2, 0);
             skyLabel1.Name = "skyLabel1";
-            skyLabel1.Size = new Size(124, 28);
+            skyLabel1.Size = new Size(70, 17);
             skyLabel1.TabIndex = 4;
             skyLabel1.Text = "Duration";
             // 
             // skyLabel2
             // 
             skyLabel2.AutoSize = true;
-            skyLabel2.Font = new Font("Unispace", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
+            skyLabel2.Font = new Font("Microsoft Sans Serif", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
             skyLabel2.ForeColor = Color.Silver;
-            skyLabel2.Location = new Point(182, 273);
+            skyLabel2.Location = new Point(106, 136);
+            skyLabel2.Margin = new Padding(2, 0, 2, 0);
             skyLabel2.Name = "skyLabel2";
-            skyLabel2.Size = new Size(166, 28);
+            skyLabel2.Size = new Size(100, 17);
             skyLabel2.TabIndex = 5;
             skyLabel2.Text = "Step number";
             // 
             // timerLabel
             // 
             timerLabel.AutoSize = true;
-            timerLabel.Font = new Font("Unispace", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
+            timerLabel.Font = new Font("Microsoft Sans Serif", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
             timerLabel.ForeColor = Color.FromArgb(128, 255, 128);
-            timerLabel.Location = new Point(220, 376);
+            timerLabel.Location = new Point(128, 188);
+            timerLabel.Margin = new Padding(2, 0, 2, 0);
             timerLabel.Name = "timerLabel";
-            timerLabel.Size = new Size(82, 28);
+            timerLabel.Size = new Size(49, 17);
             timerLabel.TabIndex = 7;
             timerLabel.Text = "Timer";
             // 
             // asyncLabel
             // 
             asyncLabel.AutoSize = true;
-            asyncLabel.Font = new Font("Unispace", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
+            asyncLabel.Font = new Font("Microsoft Sans Serif", 9.857142F, FontStyle.Bold, GraphicsUnit.Point);
             asyncLabel.ForeColor = Color.FromArgb(29, 200, 238);
-            asyncLabel.Location = new Point(650, 376);
+            asyncLabel.Location = new Point(379, 188);
+            asyncLabel.Margin = new Padding(2, 0, 2, 0);
             asyncLabel.Name = "asyncLabel";
-            asyncLabel.Size = new Size(82, 28);
+            asyncLabel.Size = new Size(51, 17);
             asyncLabel.TabIndex = 9;
             asyncLabel.Text = "Async";
             // 
@@ -130,7 +135,8 @@
             methodSwitch.DisabledCheckColor = Color.FromArgb(100, 65, 177, 225);
             methodSwitch.DisabledUnCheckColor = Color.FromArgb(200, 205, 205, 205);
             methodSwitch.IsDerivedStyle = true;
-            methodSwitch.Location = new Point(449, 382);
+            methodSwitch.Location = new Point(262, 191);
+            methodSwitch.Margin = new Padding(2);
             methodSwitch.Name = "methodSwitch";
             methodSwitch.Size = new Size(58, 22);
             methodSwitch.Style = ReaLTaiizor.Enum.Metro.Style.Light;
@@ -156,8 +162,9 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(938, 41);
+            panel1.Size = new Size(547, 20);
             panel1.TabIndex = 11;
             // 
             // nightControlBox1
@@ -174,7 +181,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(799, 0);
+            nightControlBox1.Location = new Point(408, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -188,34 +195,38 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(12, 4);
+            label1.Location = new Point(7, 2);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(206, 32);
+            label1.Size = new Size(119, 19);
             label1.TabIndex = 2;
             label1.Text = "Countdown Timer";
             // 
             // durationNum
             // 
-            durationNum.Location = new Point(628, 209);
+            durationNum.Location = new Point(366, 104);
+            durationNum.Margin = new Padding(2);
             durationNum.Name = "durationNum";
-            durationNum.Size = new Size(131, 35);
+            durationNum.Size = new Size(76, 23);
             durationNum.TabIndex = 12;
             durationNum.ValueChanged += durationNum_ValueChanged;
             // 
             // stepNum
             // 
-            stepNum.Location = new Point(628, 269);
+            stepNum.Location = new Point(366, 134);
+            stepNum.Margin = new Padding(2);
             stepNum.Name = "stepNum";
-            stepNum.Size = new Size(131, 35);
+            stepNum.Size = new Size(76, 23);
             stepNum.TabIndex = 13;
             stepNum.ValueChanged += stepNum_ValueChanged;
             // 
             // StartCounterButton
             // 
-            StartCounterButton.Location = new Point(182, 459);
+            StartCounterButton.Location = new Point(106, 230);
+            StartCounterButton.Margin = new Padding(2);
             StartCounterButton.Name = "StartCounterButton";
-            StartCounterButton.Padding = new Padding(5);
-            StartCounterButton.Size = new Size(178, 67);
+            StartCounterButton.Padding = new Padding(3, 2, 3, 2);
+            StartCounterButton.Size = new Size(104, 34);
             StartCounterButton.TabIndex = 14;
             StartCounterButton.Text = "Start";
             StartCounterButton.Click += StartCounterButton_Click;
@@ -223,38 +234,41 @@
             // inaccuracyLabel
             // 
             inaccuracyLabel.AutoSize = true;
-            inaccuracyLabel.ForeColor = Color.FromArgb(220, 220, 220);
-            inaccuracyLabel.Location = new Point(302, 323);
+            inaccuracyLabel.ForeColor = Color.Fuchsia;
+            inaccuracyLabel.Location = new Point(106, 163);
+            inaccuracyLabel.Margin = new Padding(2, 0, 2, 0);
             inaccuracyLabel.Name = "inaccuracyLabel";
-            inaccuracyLabel.Size = new Size(0, 30);
+            inaccuracyLabel.Size = new Size(0, 15);
             inaccuracyLabel.TabIndex = 15;
             // 
             // PauseButton
             // 
-            PauseButton.Location = new Point(382, 459);
+            PauseButton.Location = new Point(223, 230);
+            PauseButton.Margin = new Padding(2);
             PauseButton.Name = "PauseButton";
-            PauseButton.Padding = new Padding(5);
-            PauseButton.Size = new Size(178, 67);
+            PauseButton.Padding = new Padding(3, 2, 3, 2);
+            PauseButton.Size = new Size(104, 34);
             PauseButton.TabIndex = 16;
             PauseButton.Text = "Pause";
             PauseButton.Click += PauseButton_Click;
             // 
             // StopButton
             // 
-            StopButton.Location = new Point(581, 459);
+            StopButton.Location = new Point(339, 230);
+            StopButton.Margin = new Padding(2);
             StopButton.Name = "StopButton";
-            StopButton.Padding = new Padding(5);
-            StopButton.Size = new Size(178, 67);
+            StopButton.Padding = new Padding(3, 2, 3, 2);
+            StopButton.Size = new Size(104, 34);
             StopButton.TabIndex = 17;
             StopButton.Text = "Stop";
             StopButton.Click += StopButton_Click;
             // 
             // Task1_CountdownTimer
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 24, 29);
-            ClientSize = new Size(938, 553);
+            ClientSize = new Size(547, 276);
             Controls.Add(StopButton);
             Controls.Add(PauseButton);
             Controls.Add(inaccuracyLabel);
@@ -269,6 +283,7 @@
             Controls.Add(skyLabel1);
             Controls.Add(counterDisplay);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "Task1_CountdownTimer";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
